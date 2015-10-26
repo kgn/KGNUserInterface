@@ -11,6 +11,15 @@ import KGNAutoLayout
 
 extension UIViewController {
 
+    /**
+     Add a view controller as a child view controller.
+     This helper method encapsulates all of the logic to
+     properly add a view controller as a child view controller.
+
+     - parameter viewController: The view controller to add as a child view controller.
+     - parameter toView: Optional view to add the given view controller's view to as a subview.
+     - parameter belowSubview: Optional view to insert the given view controller's view below.
+     */
     public func addSubViewController(viewController: UIViewController, toView: UIView? = nil, belowSubview: UIView? = nil) {
         self.addChildViewController(viewController)
         var parentView = self.view

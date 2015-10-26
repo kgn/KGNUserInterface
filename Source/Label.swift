@@ -9,23 +9,27 @@
 import UIKit
 import KGNPreferredFontManager
 
+/// Subclass of `PreferredFontLabel` that registers
+/// `Style.PreferredFontManager` as the preferred font manger.
 public class Label: PreferredFontLabel {
 
-    public var intrinsicWidth = true
-    public var intrinsicHeight = true
+    /// Allow intrinsic width, if `false` `UIViewNoIntrinsicMetric` is used.
+    public var allowIntrinsicWidth = true
+
+    /// Allow intrinsic height, if `false` `UIViewNoIntrinsicMetric` is used.
+    public var allowIntrinsicHeight = true
 
     override public func setup() {
         self.preferredFontManager = Style.PreferredFontManager
-        self.textColor = Style.Color.White
         super.setup()
     }
 
     override public func intrinsicContentSize() -> CGSize {
         var intrinsicContentSize = super.intrinsicContentSize()
-        if !self.intrinsicWidth {
+        if !self.allowIntrinsicWidth {
             intrinsicContentSize.width = UIViewNoIntrinsicMetric
         }
-        if !self.intrinsicHeight {
+        if !self.allowIntrinsicHeight {
             intrinsicContentSize.height = UIViewNoIntrinsicMetric
         }
         return intrinsicContentSize

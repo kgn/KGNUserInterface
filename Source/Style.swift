@@ -11,6 +11,7 @@ import KGNColor
 import KGNPreferredFontManager
 import NSDateTimeAgo
 
+/// CGFloat value for Pi
 public let π = CGFloat(M_PI)
 
 private let preferredFontManager: PreferredFontManager = {
@@ -44,11 +45,13 @@ private let numberFormatter: NSNumberFormatter = {
     return numberFormatter
 }()
 
+/// Base style namespace
 public struct Style {
 
     public static let PreferredFontManager = preferredFontManager
     public static let Calander = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
 
+    /// Color statics
     public struct Color {
         public static let Clear = UIColor.clearColor()
         public static let White = UIColor.whiteColor()
@@ -56,35 +59,73 @@ public struct Style {
         public static let DimWhite = White.colorWithAlphaComponent(0.5)
     }
 
+    /// Size statics
     public struct Size {
+
+        /// The scale of the main screen
         public static let ScreenScale: CGFloat = UIScreen.mainScreen().scale
 
+        /// One point
         public static let OnePoint: CGFloat = 1
+
+        /// Half of a point
         public static let HalfPoint: CGFloat = OnePoint/2
+
+        /// One pixel
         public static let OnePixel: CGFloat = OnePoint/ScreenScale
 
+        /// Base small padding size: 4 point
         public static let SmallPadding: CGFloat = 4
+
+        /// Base padding size: 10 point
         public static let Padding: CGFloat = 10
+
+        /// Base large padding size: 20 point
         public static let LargePadding: CGFloat = 20
+
+        /// Standard iOS control size: 44 point
         public static let Control: CGFloat = 44
 
+        /// Base label width: 300 point
         public static let LabelWidth: CGFloat = 300
     }
 
+    /// Animation statics
     public struct Animation {
+
+        /// Base animation duration: 0.25 seconds
         public static let Duration: NSTimeInterval = 0.25
+
+        /// Base animation long duration: 0.5 seconds
         public static let LongDuration: NSTimeInterval = 0.5
+
+        /// Base animation spring dampening: 0.4
         public static let Damping: CGFloat = 0.4
+
+        /// Base animation spring velocity: 0.8
         public static let Velocity: CGFloat = 0.8
     }
 
+    /// Shadow statics
     public struct Shadow {
 
+        /// Base shadow color, defaults to `Style.Color.Black`
         public static let Color: UIColor = Style.Color.Black
+
+        /// Base shadow offset: `{0, 1}`
         public static let Offset: CGSize = CGSizeMake(0, 1)
+
+        /// Base shadow opacity: 0.5
         public static let Opacity: Float = 0.5
+
+        /// Base shadow radius: 3
         public static let Radius: CGFloat = 3
 
+        /**
+         Apply the shadow to the view
+
+         - parameter view: The view to apply the shadow to.
+         */
         public static func Apply(view: UIView) {
             view.layer.shadowColor = Color.CGColor
             view.layer.shadowOffset = Offset
@@ -94,8 +135,18 @@ public struct Style {
 
     }
 
+    /// Format statics
     public struct Format {
 
+        /**
+         Returns a formatted string for a date.
+
+         - parameter date: The date object to format.
+         - parameter includeTime: Defaults to false, 
+         if true time is included in the resulting string object.
+         
+         - returns: A formatted string for the date.
+         */
         public static func Date(date: NSDate, includeTime: Bool = false) -> String? {
             var dateString = date.timeAgo
             let components = Calander.components(.Month, fromDate: date)
@@ -110,6 +161,13 @@ public struct Style {
             return dateString
         }
 
+        /**
+         Returns a formatted string for the given number.
+
+         - parameter number: The number object to format.
+
+         - returns: A formatted string for the number.
+         */
         public static func Number(number: NSNumber) -> String? {
             return numberFormatter.stringFromNumber(number)
         }
