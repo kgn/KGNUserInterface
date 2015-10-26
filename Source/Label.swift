@@ -21,7 +21,7 @@ public class Label: PreferredFontLabel {
 
     override public func setup() {
         self.preferredFontManager = Style.PreferredFontManager
-        self.textColor = Style.Color.Label
+        self.textColor = UILabel.appearance().textColor
         super.setup()
     }
 

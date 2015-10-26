@@ -15,7 +15,6 @@ public class Button: PreferredFontButton {
 
     override public func setup() {
         self.preferredFontManager = Style.PreferredFontManager
-        self.tintColor = Style.Color.Button
         super.setup()
     }
 

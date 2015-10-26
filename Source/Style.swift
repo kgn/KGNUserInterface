@@ -56,12 +56,6 @@ public struct Style {
         public static let Clear = UIColor.clearColor()
         public static let White = UIColor.whiteColor()
         public static let Black = UIColor.blackColor()
-
-        public static let DimWhite = White.colorWithAlphaComponent(0.5)
-
-        public static let Tint = Black
-        public static let Label = Black
-        public static let Button = Tint
     }
 
     /// Size statics
