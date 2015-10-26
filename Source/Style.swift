@@ -107,7 +107,7 @@ public struct Style {
         public static let StatusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
 
         // The maximum width or height of an Instagram photo in pixels
-        public static let MaxInstagramSize = 1080
+        public static let MaxInstagramSize: CGFloat = 1080
     }
 
     /// Animation statics
