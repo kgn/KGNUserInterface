@@ -11,8 +11,6 @@
 
 [![Build Status](https://travis-ci.org/kgn/KGNUserInterface.svg)](https://travis-ci.org/kgn/KGNUserInterface)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-Compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
-[![CocoaPods Version](https://img.shields.io/cocoapods/v/KGNUserInterface.svg)](https://cocoapods.org/pods/KGNUserInterface)
-[![CocoaPods Platforms](https://img.shields.io/cocoapods/p/KGNUserInterface.svg)](https://cocoapods.org/pods/KGNUserInterface)
 
 [![Twitter](https://img.shields.io/badge/Twitter-@iamkgn-55ACEE.svg)](http://twitter.com/iamkgn)
 [![Star](https://img.shields.io/github/followers/kgn.svg?style=social&label=Follow%20%40kgn)](https://github.com/kgn)
@@ -121,9 +119,9 @@ cell.dateLabel.text = Style.Format.Date(creationDate, includeTime: true)
 `Label` also exposes properties to control the width and height intrinsic content size without having to subclass the label through `allowIntrinsicWidth` and `allowIntrinsicHeight`.
 
 ## Progress
-- [ ] Badges
 - [ ] Tests
 - [ ] Travis
+- [X] Badges
 - [X] Carthage
 - [X] Description
 - [X] Documentation
