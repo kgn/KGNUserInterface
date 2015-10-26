@@ -89,22 +89,25 @@ public struct Style {
         public static let LabelWidth: CGFloat = 300
 
         /// The width of an iPhone 5 screen in point
-        static let iPhone5Width: CGFloat = 320
+        public static let iPhone5Width: CGFloat = 320
 
         /// The width of an iPhone 6 screen in point
-        static let iPhone6Width: CGFloat = 375
+        public static let iPhone6Width: CGFloat = 375
 
         /// The width of an iPhone 6 Plus screen in point
-        static let iPhone6PlusWidth: CGFloat = 414
+        public static let iPhone6PlusWidth: CGFloat = 414
 
         // The native screen width in pixels
-        static let NativeScreenWidth = CGRectGetWidth(UIScreen.mainScreen().nativeBounds)/UIScreen.mainScreen().nativeScale
+        public static let NativeScreenWidth = CGRectGetWidth(UIScreen.mainScreen().nativeBounds)/UIScreen.mainScreen().nativeScale
 
         // The native screen height in pixels
-        static let NativeScreenHeight = CGRectGetHeight(UIScreen.mainScreen().nativeBounds)/UIScreen.mainScreen().nativeScale
+        public static let NativeScreenHeight = CGRectGetHeight(UIScreen.mainScreen().nativeBounds)/UIScreen.mainScreen().nativeScale
 
         // The height of the status bar in points
-        static let StatusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        public static let StatusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+
+        // The maximum width or height of an Instagram photo in pixels
+        public static let MaxInstagramSize = 1080
     }
 
     /// Animation statics
