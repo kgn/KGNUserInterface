@@ -1,6 +1,6 @@
 # KGNUserInterface
 
-`KGNUserInterface` is a collection of helpful `UIColor` extensions.
+`KGNUserInterface` is a collection of the core user interface resources.
 
 [![iOS 8.0+](http://img.shields.io/badge/iOS-8.0%2B-blue.svg)]()
 [![watchOS 1.0+](http://img.shields.io/badge/watchOS-1.0%2B-blue.svg)]()
@@ -25,50 +25,10 @@
 github "kgn/KGNUserInterface"
 ```
 
-### CocoaPods
-```
-pod 'KGNUserInterface'
-```
-
-## Examples
-
-### Hex Initializer
-Using a hex value is often the easiest way to use the exact color from a design.
-``` Swift
-let tintColor = UIColor(hex: 0x2DFF5F)
-```
-
-### Components
-Used this helpful tuple to get the `red`, `green`, `blue` and `alpha` values of a `UIColor`.
-
-``` Swift
-let tintColor = UIColor.brownColor()
-print("red: \(tintColor.components.red)")
-print("green: \(tintColor.components.green)")
-print("blue: \(tintColor.components.blue)")
-print("alpha: \(tintColor.components.alpha)")
-```
-
-### Invert a Color
-``` Swift
-let tintColor = UIColor.redColor().invert()
-```
-
-### Lighten a Color
-``` Swift
-let tintColor = UIColor.blueColor().lighten(0.5)
-```
-
-### Darken a Color
-``` Swift
-let tintColor = UIColor.greenColor().darken(0.5)
-```
-
 ## Progress
-- [X] Badges
-- [X] Tests
-- [X] Travis
+- [ ] Badges
+- [ ] Tests
+- [ ] Travis
 - [X] Carthage
-- [X] CocoaPods
-- [X] Description
-- [X] Documentation
+- [ ] Description
+- [ ] Documentation
