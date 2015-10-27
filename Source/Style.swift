@@ -74,12 +74,15 @@ public struct Style {
         public static let OnePixel: CGFloat = OnePoint/ScreenScale
 
         /// Base small padding size: 4 point
+        /// Based on the iOS 7 4px grid
         public static let SmallPadding: CGFloat = 4
 
         /// Base padding size: 10 point
-        public static let Padding: CGFloat = 10
+        /// Based on the iOS 7 4px grid
+        public static let Padding: CGFloat = 8
 
         /// Base large padding size: 20 point
+        /// Based on the iOS 7 4px grid
         public static let LargePadding: CGFloat = 20
 
         /// Standard iOS control size: 44 point
