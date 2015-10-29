@@ -77,6 +77,10 @@ extension Style.Color {
 }
 ```
 
+#### Style.Gradient
+
+This struct includes gradient statics like `Style.Gradient.BlackAndWhite`. You can extend this struct to add your own gradients for use throughout your app.
+
 #### Style.Size
 
 This struct includes size statics like `Style.Size.OnePixel`. You can extend this struct to add your own sizes for use throughout your app.

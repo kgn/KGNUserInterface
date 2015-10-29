@@ -99,9 +99,9 @@
 		836E69991BCCD3B40089EAB1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				83E06D121BDDC151001C01CF /* Style.swift */,
 				83E06D151BDDC1F7001C01CF /* Label.swift */,
 				83E06D141BDDC1F7001C01CF /* Button.swift */,
-				83E06D121BDDC151001C01CF /* Style.swift */,
 				83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */,
 				836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */,
 				836E699C1BCCD3B40089EAB1 /* Info.plist */,

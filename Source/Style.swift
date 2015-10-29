@@ -8,8 +8,8 @@
 
 import UIKit
 import KGNColor
-import KGNPreferredFontManager
 import NSDateTimeAgo
+import KGNGradientView
 
 /// CGFloat value for Pi
 public let π = CGFloat(M_PI)
@@ -39,9 +39,33 @@ public struct Style {
 
     /// Color statics
     public struct Color {
-        public static let Clear = UIColor.clearColor()
+
+        /// Pure white color
         public static let White = UIColor.whiteColor()
+
+        /// Pure black color
         public static let Black = UIColor.blackColor()
+
+        /// Clear white color with 0 alpha
+        public static let ClearWhite = White.colorWithAlphaComponent(0)
+
+        /// Clear black color with 0 alpha
+        public static let ClearBlack = Black.colorWithAlphaComponent(0)
+
+    }
+
+    /// Gradient statics
+    public struct Gradient {
+
+        /// Gradient going from black to white
+        public static let BlackAndWhite = KGNGradientView.Gradient(startColor: Color.Black, endColor: Color.White)
+
+        /// Gradient going from clear white to opaque white
+        public static let ClearWhite = KGNGradientView.Gradient(startColor: Color.ClearWhite, endColor: Color.White)
+
+        /// Gradient going from clear black to opaque black
+        public static let ClearBlack = KGNGradientView.Gradient(startColor: Color.ClearBlack, endColor: Color.Black)
+
     }
 
     /// Size statics
