@@ -9,12 +9,10 @@
 import UIKit
 import KGNPreferredFontManager
 
-/// Subclass of `PreferredFontButton` that registers 
-/// `Style.PreferredFontManager` as the preferred font manger.
+/// Subclass of `PreferredFontButton`.
 public class Button: PreferredFontButton {
 
     override public func setup() {
-        self.preferredFontManager = Style.PreferredFontManager
         super.setup()
     }
 

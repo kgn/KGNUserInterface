@@ -14,17 +14,6 @@ import NSDateTimeAgo
 /// CGFloat value for Pi
 public let π = CGFloat(M_PI)
 
-private let preferredFontManager: PreferredFontManager = {
-    let preferredFontManager = PreferredFontManager()
-    preferredFontManager.registerFontsForTextStyle(UIFontTextStyleHeadline, fontWeight: UIFontWeightUltraLight, baseFontSize: UIFont.systemFontSize()*4, increment: 1, decrement: 1)
-    preferredFontManager.registerFontsForTextStyle(UIFontTextStyleSubheadline, fontWeight: UIFontWeightRegular, baseFontSize: UIFont.systemFontSize()*2, increment: 1, decrement: 1)
-    preferredFontManager.registerFontsForTextStyle(UIFontTextStyleBody, fontWeight: UIFontWeightRegular, baseFontSize: UIFont.labelFontSize(), increment: 2, decrement: 1)
-    preferredFontManager.registerFontsForTextStyle(UIFontTextStyleCaption1, fontWeight: UIFontWeightMedium, baseFontSize: UIFont.systemFontSize(), increment: 1, decrement: 1)
-    preferredFontManager.registerFontsForTextStyle(UIFontTextStyleCaption2, fontWeight: UIFontWeightRegular, baseFontSize: UIFont.systemFontSize(), increment: 1, decrement: 1)
-    preferredFontManager.registerFontsForTextStyle(UIFontTextStyleFootnote, fontWeight: UIFontWeightRegular, baseFontSize: UIFont.smallSystemFontSize(), increment: 1, decrement: 1)
-    return preferredFontManager
-}()
-
 private let dateFormatter: NSDateFormatter = {
     let dateFormatter = NSDateFormatter()
     dateFormatter.timeStyle = .NoStyle
@@ -47,9 +36,6 @@ private let numberFormatter: NSNumberFormatter = {
 
 /// Base style namespace
 public struct Style {
-
-    public static let PreferredFontManager = preferredFontManager
-    public static let Calander = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
 
     /// Color statics
     public struct Color {
@@ -170,9 +156,14 @@ public struct Style {
          
          - returns: A formatted string for the date.
          */
-        public static func Date(date: NSDate, includeTime: Bool = false) -> String? {
+        public static func Date(date: NSDate, includeTime: Bool = false, calanderIdentifier: String = NSCalendarIdentifierGregorian) -> String? {
             var dateString = date.timeAgo
-            let components = Calander.components(.Month, fromDate: date)
+
+            guard let calander = NSCalendar(identifier: calanderIdentifier) else {
+                return nil
+            }
+
+            let components = calander.components(.Month, fromDate: date)
             if components.month > 1 {
                 dateString = dateFormatter.stringFromDate(date)
             }
@@ -181,6 +172,7 @@ public struct Style {
                 let timeString = timeFormatter.stringFromDate(date)
                 return NSLocalizedString("\(dateString) at \(timeString)", comment: "Date time label")
             }
+
             return dateString
         }
 
