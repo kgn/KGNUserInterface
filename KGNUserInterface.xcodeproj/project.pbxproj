@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		833C2C211BE3179B0042C628 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C2C201BE3179B0042C628 /* TextField.swift */; };
 		836E699B1BCCD3B40089EAB1 /* KGNUserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		836E69A21BCCD3B40089EAB1 /* KGNUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */; };
 		836E69A71BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E69A61BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		833C2C201BE3179B0042C628 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KGNUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGNUserInterface.h; sourceTree = "<group>"; };
 		836E699C1BCCD3B40089EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				83E06D121BDDC151001C01CF /* Style.swift */,
 				83E06D151BDDC1F7001C01CF /* Label.swift */,
 				83E06D141BDDC1F7001C01CF /* Button.swift */,
+				833C2C201BE3179B0042C628 /* TextField.swift */,
 				83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */,
 				836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */,
 				836E699C1BCCD3B40089EAB1 /* Info.plist */,
@@ -229,6 +232,7 @@
 				83E06D131BDDC151001C01CF /* Style.swift in Sources */,
 				83E06D161BDDC1F7001C01CF /* Button.swift in Sources */,
 				83E06D171BDDC1F7001C01CF /* Label.swift in Sources */,
+				833C2C211BE3179B0042C628 /* TextField.swift in Sources */,
 				83E06D111BDDC0E8001C01CF /* UIViewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
