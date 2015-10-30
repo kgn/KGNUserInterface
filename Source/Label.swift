@@ -10,7 +10,7 @@ import UIKit
 import KGNPreferredFontManager
 
 /// Subclass of `PreferredFontLabel`. This implementation also allows
-/// the text color to be set by `UILabel.appearance().textColor`.
+/// the text color to be set by `Label.appearance().textColor`.
 public class Label: PreferredFontLabel {
 
     /// Allow intrinsic width, if `false` `UIViewNoIntrinsicMetric` is used.
@@ -20,7 +20,7 @@ public class Label: PreferredFontLabel {
     public var allowIntrinsicHeight = true
 
     override public func setup() {
-        self.textColor = UILabel.appearance().textColor
+        self.textColor = Label.appearance().textColor
         super.setup()
     }
 
