@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		833C2C211BE3179B0042C628 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C2C201BE3179B0042C628 /* TextField.swift */; };
+		833C2C221BE31C040042C628 /* KGNAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */; };
+		833C2C231BE31C040042C628 /* KGNColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D191BDDC30D001C01CF /* KGNColor.framework */; };
+		833C2C241BE31C040042C628 /* KGNGradientView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1A1BDDC30D001C01CF /* KGNGradientView.framework */; };
+		833C2C251BE31C040042C628 /* KGNPreferredFontManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1B1BDDC30E001C01CF /* KGNPreferredFontManager.framework */; };
+		833C2C261BE31C040042C628 /* NSDateTimeAgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1C1BDDC30E001C01CF /* NSDateTimeAgo.framework */; };
 		836E699B1BCCD3B40089EAB1 /* KGNUserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		836E69A21BCCD3B40089EAB1 /* KGNUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */; };
 		836E69A71BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E69A61BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift */; };
@@ -69,6 +74,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				836E69A21BCCD3B40089EAB1 /* KGNUserInterface.framework in Frameworks */,
+				833C2C221BE31C040042C628 /* KGNAutoLayout.framework in Frameworks */,
+				833C2C231BE31C040042C628 /* KGNColor.framework in Frameworks */,
+				833C2C241BE31C040042C628 /* KGNGradientView.framework in Frameworks */,
+				833C2C251BE31C040042C628 /* KGNPreferredFontManager.framework in Frameworks */,
+				833C2C261BE31C040042C628 /* NSDateTimeAgo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +403,10 @@
 		836E69AF1BCCD3B40089EAB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidkeegan.KGNUserInterfaceTests;
@@ -403,6 +417,10 @@
 		836E69B01BCCD3B40089EAB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidkeegan.KGNUserInterfaceTests;

@@ -20,8 +20,9 @@ public class Label: PreferredFontLabel {
     public var allowIntrinsicHeight = true
 
     override public func setup() {
-        self.textColor = Label.appearance().textColor
         super.setup()
+
+        self.textColor = Label.appearance().textColor
     }
 
     override public func intrinsicContentSize() -> CGSize {
