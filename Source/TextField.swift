@@ -14,13 +14,13 @@ import KGNPreferredFontManager
 /// a property for setting the color of the placeholder text.
 public class TextField: PreferredFontTextField {
 
-    public override var textStyle: String {
+    override public var textStyle: String {
         didSet {
             self.placeholderLabel.textStyle = self.textStyle
         }
     }
 
-    public override var preferredFontManager: PreferredFontManager? {
+    override public var preferredFontManager: PreferredFontManager? {
         didSet {
             self.placeholderLabel.preferredFontManager = self.preferredFontManager
         }
@@ -32,7 +32,7 @@ public class TextField: PreferredFontTextField {
         }
     }
 
-    public override var placeholder: String? {
+    override public var placeholder: String? {
         get {
             return self.privatePlaceholder
         }
@@ -43,7 +43,7 @@ public class TextField: PreferredFontTextField {
     }
 
     /// The color of the placeholder text.
-    var placeholderColor: UIColor? {
+    public var placeholderColor: UIColor? {
         didSet {
             self.placeholderLabel.textColor = self.placeholderColor
         }
