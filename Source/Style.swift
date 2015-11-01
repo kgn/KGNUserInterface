@@ -98,6 +98,12 @@ public struct Style {
         /// Standard iOS control size: 44 point
         public static let Control: CGFloat = 44
 
+        /// Standard iOS navigation bar height: 44 point
+        public static let NavigationBarHeight: CGFloat = 44
+
+        /// Standard iOS navigation bar height, in landscape: 32 point
+        public static let NavigationBarHeightCompact: CGFloat = 32
+
         /// Base label width: 300 point
         public static let LabelWidth: CGFloat = 300
 
