@@ -14,6 +14,22 @@ import KGNPreferredFontManager
 /// a property for setting the color of the placeholder text.
 public class TextField: PreferredFontTextField {
 
+    override public var text: String? {
+        get {
+            return super.text
+        }
+
+        set(newValue) {
+            super.text = newValue
+
+            if self.text == nil || self.text == "" {
+                self.placeholderLabel.hidden = false
+            } else {
+                self.placeholderLabel.hidden = true
+            }
+        }
+    }
+
     override public var textStyle: String {
         didSet {
             self.placeholderLabel.textStyle = self.textStyle
@@ -60,19 +76,10 @@ public class TextField: PreferredFontTextField {
         super.setup()
 
         self.textColor = TextField.appearance().textColor
-        self.addTarget(self, action: "textDidChange:", forControlEvents: .EditingChanged)
 
         self.addSubview(self.placeholderLabel)
         self.placeholderLabel.centerVerticallyInSuperview()
         self.placeholderLabel.pinToLeftEdgeOfSuperview()
-    }
-
-    @objc private func textDidChange(sender: AnyObject) {
-        if self.text == nil || self.text == "" {
-            self.placeholderLabel.hidden = false
-        } else {
-            self.placeholderLabel.hidden = true
-        }
     }
 
 }

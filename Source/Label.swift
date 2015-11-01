@@ -13,11 +13,13 @@ import KGNPreferredFontManager
 /// the text color to be set by `Label.appearance().textColor`.
 public class Label: PreferredFontLabel {
 
-    /// Allow intrinsic width, if `false` `UIViewNoIntrinsicMetric` is used.
-    public var allowIntrinsicWidth = true
+    /// The intrinsic width, if `nil` the super value is used, 
+    /// `UIViewNoIntrinsicMetric` can also be used used.
+    public var intrinsicWidth: CGFloat?
 
-    /// Allow intrinsic height, if `false` `UIViewNoIntrinsicMetric` is used.
-    public var allowIntrinsicHeight = true
+    /// The intrinsic height, if `nil` the super value is used, 
+    /// `UIViewNoIntrinsicMetric` can also be used used.
+    public var intrinsicHeight: CGFloat?
 
     override public func setup() {
         super.setup()
@@ -27,11 +29,11 @@ public class Label: PreferredFontLabel {
 
     override public func intrinsicContentSize() -> CGSize {
         var intrinsicContentSize = super.intrinsicContentSize()
-        if !self.allowIntrinsicWidth {
-            intrinsicContentSize.width = UIViewNoIntrinsicMetric
+        if let intrinsicWidth = self.intrinsicWidth {
+            intrinsicContentSize.width = intrinsicWidth
         }
-        if !self.allowIntrinsicHeight {
-            intrinsicContentSize.height = UIViewNoIntrinsicMetric
+        if let intrinsicHeight = self.intrinsicHeight {
+            intrinsicContentSize.height = intrinsicHeight
         }
         return intrinsicContentSize
     }
