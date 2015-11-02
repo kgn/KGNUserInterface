@@ -1,9 +1,9 @@
 //
 //  Style.swift
-//  Vesting
+//  KGNUserInterface
 //
 //  Created by David Keegan on 1/11/15.
-//  Copyright (c) 2015 David Keegan. All rights reserved.
+//  Copyright © 2015 David Keegan. All rights reserved.
 //
 
 import UIKit
@@ -103,6 +103,10 @@ public struct Style {
 
         /// Standard iOS navigation bar height, in landscape: 32 point
         public static let NavigationBarHeightCompact: CGFloat = 32
+
+        /// The max width of an item set to 
+        /// the left or right views of a `TitleBarView`
+        public static let TitleBarItemMaxWidth: CGFloat = 200
 
         /// Base label width: 300 point
         public static let LabelWidth: CGFloat = 300

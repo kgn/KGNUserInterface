@@ -1,9 +1,9 @@
 //
-//  UIColor+Hex.swift
-//  UIColor+Hex
+//  UIViewController+Extension.swift
+//  KGNUserInterface
 //
 //  Created by David Keegan on 9/24/14.
-//  Copyright (c) 2014 David Keegan. All rights reserved.
+//  Copyright © 2015 David Keegan. All rights reserved.
 //
 
 import UIKit
