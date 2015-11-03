@@ -136,6 +136,9 @@ public struct Style {
     /// Animation statics
     public struct Animation {
 
+        /// Base animation short duration: 0.1 seconds
+        public static let ShortDuration: NSTimeInterval = 0.1
+
         /// Base animation duration: 0.25 seconds
         public static let Duration: NSTimeInterval = 0.25
 
@@ -147,6 +150,50 @@ public struct Style {
 
         /// Base animation spring velocity: 0.8
         public static let Velocity: CGFloat = 0.8
+
+        /**
+         Shake the view, useful for showing something as invalid.
+
+         - parameter view: The view object to shake.
+         - parameter duration: The duration of the animation, defaults to `Animation.Duration`.
+         - parameter offset: The offset amount to transform the view by, defaults to `Size.Padding`.
+         - parameter completionBlock: The completion block to call once the animation has finished.
+         */
+        public static func Shake(view: UIView, duration: NSTimeInterval = Duration, offset: CGFloat = Size.Padding, completionBlock: (() -> Void)?) {
+            let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+            animation.duration = duration
+            animation.values = [
+                -offset, offset,
+                -offset, offset,
+                -offset*0.6, offset*0.6,
+                -offset*0.3, offset*0.3,
+                0
+            ]
+
+            CATransaction.begin()
+            view.layer.addAnimation(animation, forKey: "shake")
+            CATransaction.setCompletionBlock(completionBlock)
+            CATransaction.commit()
+        }
+
+        /**
+         Pop the view, useful for brinning attention to something.
+
+         - parameter view: The view object to pop.
+         - parameter duration: The duration of the animation, defaults to `Animation.ShortDuration`.
+         - parameter scale: The offset amount to scale the view by, defaults to `1.5`.
+         - parameter completionBlock: The completion block to call once the animation has finished.
+         */
+        public static func Pop(view: UIView, duration: NSTimeInterval = ShortDuration, scale: CGFloat = Size.Padding, completionBlock: (() -> Void)?) {
+            UIView.animateWithDuration(duration*0.5, delay: 0, options: [.CurveEaseInOut, .BeginFromCurrentState], animations: {
+                view.layer.transform = CATransform3DMakeScale(scale, scale, scale)
+            }) { _ in
+                UIView.animateWithDuration(duration) {
+                    view.layer.transform = CATransform3DIdentity
+                }
+            }
+        }
     }
 
     /// Shadow statics
