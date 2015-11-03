@@ -159,7 +159,7 @@ public struct Style {
          - parameter offset: The offset amount to transform the view by, defaults to `Size.Padding`.
          - parameter completionBlock: The completion block to call once the animation has finished.
          */
-        public static func Shake(view: UIView, duration: NSTimeInterval = Duration, offset: CGFloat = Size.Padding, completionBlock: (() -> Void)?) {
+        public static func Shake(view: UIView, duration: NSTimeInterval = Duration, offset: CGFloat = Size.Padding, completionBlock: (() -> Void)? = nil) {
             let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
             animation.duration = duration
@@ -185,7 +185,7 @@ public struct Style {
          - parameter scale: The offset amount to scale the view by, defaults to `1.5`.
          - parameter completionBlock: The completion block to call once the animation has finished.
          */
-        public static func Pop(view: UIView, duration: NSTimeInterval = ShortDuration, scale: CGFloat = Size.Padding, completionBlock: (() -> Void)?) {
+        public static func Pop(view: UIView, duration: NSTimeInterval = ShortDuration, scale: CGFloat = 1.5, completionBlock: (() -> Void)? = nil) {
             UIView.animateWithDuration(duration*0.5, delay: 0, options: [.CurveEaseInOut, .BeginFromCurrentState], animations: {
                 view.layer.transform = CATransform3DMakeScale(scale, scale, scale)
             }) { _ in
