@@ -127,5 +127,5 @@ cell.dateLabel.text = Style.Format.Date(creationDate, includeTime: true)
 - [X] Travis
 - [X] Badges
 - [X] Carthage
-- [X] Description
+- [ ] Description (Add new classes to readme)
 - [X] Documentation
