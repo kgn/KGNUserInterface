@@ -29,7 +29,7 @@ private class ContentView: UIView {
 
 /// Custom title bar view, similar to UINavigationBar
 /// but intended for custom interfaces.
-public class TitleBarViewTest: UIView {
+public class TitleBarView: UIView {
 
     /// The title to display in the center of the bar
     public var title: String? {
