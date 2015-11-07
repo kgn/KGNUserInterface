@@ -77,6 +77,28 @@ public class TitleBarView: UIView {
         return ContentView()
     }()
 
+    /// Set the title, if `animated` is `true` then a cross dissolve animation is used.
+    public func setTitle(title: String?, animated: Bool) {
+        if !animated{
+            self.title = title
+            return
+        }
+
+        let animationTitleLabel = self.titleLabel.snapshotViewAfterScreenUpdates(true)
+        self.addSubview(animationTitleLabel)
+        animationTitleLabel.centerHorizontallyToItem(self.titleLabel)
+        animationTitleLabel.centerVerticallyToItem(self.titleLabel)
+
+        self.title = title
+        self.titleLabel.alpha = 0
+        UIView.animateWithDuration(Style.Animation.Duration, animations: {
+            self.titleLabel.alpha = 1
+            animationTitleLabel.alpha = 0
+        }) { _ in
+            animationTitleLabel.removeFromSuperview()
+        }
+    }
+
     override public func intrinsicContentSize() -> CGSize {
         if self.traitCollection.userInterfaceIdiom == .Phone {
             if self.traitCollection.verticalSizeClass == .Compact {
