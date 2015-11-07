@@ -29,7 +29,7 @@ private class ContentView: UIView {
 
 /// Custom title bar view, similar to UINavigationBar
 /// but intended for custom interfaces.
-public class TitleBarView: UIView {
+public class TitleBarViewTest: UIView {
 
     /// The title to display in the center of the bar
     public var title: String? {
@@ -79,23 +79,28 @@ public class TitleBarView: UIView {
 
     /// Set the title, if `animated` is `true` then a cross dissolve animation is used.
     public func setTitle(title: String?, animated: Bool) {
-        if !animated{
+        defer {
             self.title = title
+        }
+
+        if !animated{
             return
         }
 
-        let animationTitleLabel = self.titleLabel.snapshotViewAfterScreenUpdates(true)
-        self.addSubview(animationTitleLabel)
-        animationTitleLabel.centerHorizontallyToItem(self.titleLabel)
-        animationTitleLabel.centerVerticallyToItem(self.titleLabel)
+        guard let snapshot = self.titleLabel.snapshot() else {
+            return
+        }
 
-        self.title = title
+        let titleLabelImageView = UIImageView(image: snapshot)
+        self.addSubview(titleLabelImageView)
+        titleLabelImageView.centerInSuperview()
+
         self.titleLabel.alpha = 0
         UIView.animateWithDuration(Style.Animation.Duration, animations: {
             self.titleLabel.alpha = 1
-            animationTitleLabel.alpha = 0
-        }) { _ in
-            animationTitleLabel.removeFromSuperview()
+            titleLabelImageView.alpha = 0
+            }) { _ in
+                titleLabelImageView.removeFromSuperview()
         }
     }
 

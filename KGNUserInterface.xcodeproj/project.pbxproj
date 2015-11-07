@@ -16,6 +16,7 @@
 		836E699B1BCCD3B40089EAB1 /* KGNUserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		836E69A21BCCD3B40089EAB1 /* KGNUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */; };
 		836E69A71BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E69A61BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift */; };
+		8399B23A1BEE49F200C9E1B3 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2391BEE49F200C9E1B3 /* UIView+Snapshot.swift */; };
 		83BB081A1BE7A38500D4173B /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08181BE7A38500D4173B /* GradientViewController.swift */; };
 		83BB081B1BE7A38500D4173B /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08191BE7A38500D4173B /* TitleBarView.swift */; };
 		83E06D111BDDC0E8001C01CF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */; };
@@ -47,6 +48,7 @@
 		836E69A11BCCD3B40089EAB1 /* KGNUserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KGNUserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		836E69A61BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGNUserInterfaceTests.swift; sourceTree = "<group>"; };
 		836E69A81BCCD3B40089EAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8399B2391BEE49F200C9E1B3 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		83BB08181BE7A38500D4173B /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		83BB08191BE7A38500D4173B /* TitleBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBarView.swift; sourceTree = "<group>"; };
 		83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				83BB08191BE7A38500D4173B /* TitleBarView.swift */,
+				8399B2391BEE49F200C9E1B3 /* UIView+Snapshot.swift */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				83E06D161BDDC1F7001C01CF /* Button.swift in Sources */,
 				83BB081A1BE7A38500D4173B /* GradientViewController.swift in Sources */,
 				83E06D171BDDC1F7001C01CF /* Label.swift in Sources */,
+				8399B23A1BEE49F200C9E1B3 /* UIView+Snapshot.swift in Sources */,
 				833C2C211BE3179B0042C628 /* TextField.swift in Sources */,
 				83E06D111BDDC0E8001C01CF /* UIViewController+Extension.swift in Sources */,
 				83BB081B1BE7A38500D4173B /* TitleBarView.swift in Sources */,
