@@ -45,8 +45,8 @@ public class Button: PreferredFontButton {
 
      - returns: The button object.
      */
-    public class func systemButton(title title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Button {
-        let button = Button(type: .System)
+    public class func systemButton(title title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Self {
+        let button = self.init(type: .System)
         button.title = title
         button.addTarget(target, action: action, forControlEvents: events)
         return button
@@ -63,8 +63,8 @@ public class Button: PreferredFontButton {
 
      - returns: The button object.
      */
-    public class func systemButton(imageNamed imageNamed: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Button {
-        let button = Button(type: .System)
+    public class func systemButton(imageNamed imageNamed: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Self {
+        let button = self.init(type: .System)
         button.image = UIImage(named: imageNamed)
         button.addTarget(target, action: action, forControlEvents: events)
         return button
