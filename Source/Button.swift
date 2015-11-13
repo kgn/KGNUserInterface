@@ -34,6 +34,42 @@ public class Button: PreferredFontButton {
         }
     }
 
+    /**
+     Create a button object with a title of type `System`.
+
+     - parameter title: The title of the button.
+     - parameter target: The target for the button action.
+     - parameter action: The selector on the target for the button action.
+     - parameter forControlEvents: The control events to trigger the button action.
+     Defaults to `TouchUpInside`.
+
+     - returns: The button object.
+     */
+    public class func systemButton(title title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Button {
+        let button = Button(type: .System)
+        button.title = title
+        button.addTarget(target, action: action, forControlEvents: events)
+        return button
+    }
+
+    /**
+     Create a button object with a title of type `System`.
+
+     - parameter imageNamed: The name of the image file.
+     - parameter target: The target for the button action.
+     - parameter action: The selector on the target for the button action.
+     - parameter forControlEvents: The control events to trigger the button action.
+     Defaults to `TouchUpInside`.
+
+     - returns: The button object.
+     */
+    public class func systemButton(imageNamed imageNamed: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Button {
+        let button = Button(type: .System)
+        button.image = UIImage(named: imageNamed)
+        button.addTarget(target, action: action, forControlEvents: events)
+        return button
+    }
+
     override public func setup() {
         super.setup()
     }
