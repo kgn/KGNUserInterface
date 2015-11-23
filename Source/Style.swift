@@ -244,16 +244,16 @@ public struct Style {
                 return nil
             }
 
-            let components = calander.components([.Month, .Year], fromDate: date)
-            if components.year >= 1 && components.month > 1 {
+            let components = calander.components([.Month, .Year], fromDate: date, toDate: NSDate(), options: [])
+            if components.year >= 1 || components.month > 1 {
                 dateString = dateFormatter.stringFromDate(date)
             }
 
             if includeTime {
                 let timeString = timeFormatter.stringFromDate(date)
-                return NSLocalizedString("\(dateString) at \(timeString)", comment: "Date time label")
+                return String(format: NSLocalizedString("%@ at %@", comment: "Date time label"), dateString, timeString)
             }
-
+            
             return dateString
         }
 
