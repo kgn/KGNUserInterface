@@ -244,8 +244,8 @@ public struct Style {
                 return nil
             }
 
-            let components = calander.components(.Month, fromDate: date)
-            if components.month > 1 {
+            let components = calander.components([.Month, .Year], fromDate: date)
+            if components.year >= 1 && components.month > 1 {
                 dateString = dateFormatter.stringFromDate(date)
             }
 
