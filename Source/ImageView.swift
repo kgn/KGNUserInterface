@@ -3,7 +3,7 @@
 //  KGNUserInterface
 //
 //  Created by David Keegan on 11/12/15.
-//  Copyright © 2015 Acorns Grow Inc. All rights reserved.
+//  Copyright © 2015 David Keegan. All rights reserved.
 //
 
 import UIKit
