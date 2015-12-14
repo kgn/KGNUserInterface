@@ -29,17 +29,21 @@ extension UIView {
      - returns: The image object for the snapshot.
      */
     public func snapshot(opaque: Bool = false, scale: CGFloat = 0, afterScreenUpdates: Bool = false) -> UIImage? {
+        if CGRectEqualToRect(self.bounds, CGRectZero) {
+            return nil
+        }
+
+        defer {
+            UIGraphicsEndImageContext()
+        }
+
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, opaque, scale)
         if !self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: afterScreenUpdates) {
-            UIGraphicsEndImageContext()
             return nil
         }
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
-            UIGraphicsEndImageContext()
             return nil
         }
-        UIGraphicsEndImageContext()
-
         return image
     }
 
