@@ -48,6 +48,7 @@ public class TitleBarView: UIView {
                 self.leftContainerView.addSubview(leftView)
                 leftView.pinToEdgesOfSuperview()
             }
+            self.leftContainerView.invalidateIntrinsicContentSize()
         }
     }
 
@@ -61,11 +62,13 @@ public class TitleBarView: UIView {
                 self.rightContainerView.addSubview(rightView)
                 rightView.pinToEdgesOfSuperview()
             }
+            self.rightContainerView.invalidateIntrinsicContentSize()
         }
     }
 
     private lazy var titleLabel: Label = {
         let label = Label(textStyle: UIFontTextStyleSubheadline)
+        label.accessibilityTraits = UIAccessibilityTraitHeader
         return label
     }()
 
