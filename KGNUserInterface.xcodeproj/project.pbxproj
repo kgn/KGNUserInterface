@@ -20,6 +20,11 @@
 		83BB081A1BE7A38500D4173B /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08181BE7A38500D4173B /* GradientViewController.swift */; };
 		83BB081B1BE7A38500D4173B /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08191BE7A38500D4173B /* TitleBarView.swift */; };
 		83C5DF7C1BF5CA9F00A97524 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5DF7B1BF5CA9E00A97524 /* ImageView.swift */; };
+		83DC54211C4C4F1D00CF23A9 /* KGNAutoLayout.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83DC54221C4C4F1D00CF23A9 /* KGNColor.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D191BDDC30D001C01CF /* KGNColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83DC54231C4C4F1D00CF23A9 /* KGNGradientView.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1A1BDDC30D001C01CF /* KGNGradientView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83DC54241C4C4F1D00CF23A9 /* KGNPreferredFontManager.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1B1BDDC30E001C01CF /* KGNPreferredFontManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83DC54251C4C4F1D00CF23A9 /* NSDateTimeAgo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1C1BDDC30E001C01CF /* NSDateTimeAgo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83E06D111BDDC0E8001C01CF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */; };
 		83E06D131BDDC151001C01CF /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D121BDDC151001C01CF /* Style.swift */; };
 		83E06D161BDDC1F7001C01CF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D141BDDC1F7001C01CF /* Button.swift */; };
@@ -40,6 +45,24 @@
 			remoteInfo = KGNUserInterface;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83DC54201C4C4F0E00CF23A9 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				83DC54211C4C4F1D00CF23A9 /* KGNAutoLayout.framework in Copy Frameworks */,
+				83DC54221C4C4F1D00CF23A9 /* KGNColor.framework in Copy Frameworks */,
+				83DC54231C4C4F1D00CF23A9 /* KGNGradientView.framework in Copy Frameworks */,
+				83DC54241C4C4F1D00CF23A9 /* KGNPreferredFontManager.framework in Copy Frameworks */,
+				83DC54251C4C4F1D00CF23A9 /* NSDateTimeAgo.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		833C2C201BE3179B0042C628 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -96,12 +119,8 @@
 		836E698D1BCCD3B30089EAB1 = {
 			isa = PBXGroup;
 			children = (
-				83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */,
-				83E06D191BDDC30D001C01CF /* KGNColor.framework */,
-				83E06D1A1BDDC30D001C01CF /* KGNGradientView.framework */,
-				83E06D1B1BDDC30E001C01CF /* KGNPreferredFontManager.framework */,
-				83E06D1C1BDDC30E001C01CF /* NSDateTimeAgo.framework */,
 				836E69991BCCD3B40089EAB1 /* Source */,
+				83DC541F1C4C4C8300CF23A9 /* Frameworks */,
 				836E69A51BCCD3B40089EAB1 /* Tests */,
 				836E69981BCCD3B40089EAB1 /* Products */,
 			);
@@ -167,6 +186,18 @@
 			name = UIView;
 			sourceTree = "<group>";
 		};
+		83DC541F1C4C4C8300CF23A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */,
+				83E06D191BDDC30D001C01CF /* KGNColor.framework */,
+				83E06D1A1BDDC30D001C01CF /* KGNGradientView.framework */,
+				83E06D1B1BDDC30E001C01CF /* KGNPreferredFontManager.framework */,
+				83E06D1C1BDDC30E001C01CF /* NSDateTimeAgo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -206,6 +237,7 @@
 				836E699D1BCCD3B40089EAB1 /* Sources */,
 				836E699E1BCCD3B40089EAB1 /* Frameworks */,
 				836E699F1BCCD3B40089EAB1 /* Resources */,
+				83DC54201C4C4F0E00CF23A9 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
