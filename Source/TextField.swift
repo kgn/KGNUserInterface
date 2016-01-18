@@ -42,12 +42,22 @@ public class TextField: PreferredFontTextField {
             return super.text
         }
 
-        set(newValue) {
+        set {
             super.text = newValue
             self.updatePlaceholderAndAutoComplete()
         }
     }
 
+    override public var font: UIFont? {
+        get {
+            return super.font
+        }
+
+        set {
+            super.font = newValue
+            self.updatePlaceholderAndAutoComplete()
+        }
+    }
 
     override public var textStyle: String {
         didSet {
@@ -100,6 +110,7 @@ public class TextField: PreferredFontTextField {
         return label
     }()
 
+    private var autoCompleteLabelConstraint: NSLayoutConstraint!
     private lazy var autoCompleteLabel: Label = {
         let label = Label(textStyle: self.textStyle)
         label.textColor = self.placeholderColor
@@ -129,7 +140,7 @@ public class TextField: PreferredFontTextField {
 
         self.addSubview(self.autoCompleteLabel)
         self.autoCompleteLabel.centerVerticallyInSuperview()
-        self.autoCompleteLabel.pinToLeftEdgeOfSuperview()
+        self.autoCompleteLabelConstraint = self.autoCompleteLabel.pinToLeftEdgeOfSuperview()
 
         NSNotificationCenter.defaultCenter().addObserver(
             self, selector: "textDidChange:",
@@ -149,9 +160,23 @@ public class TextField: PreferredFontTextField {
     private func updatePlaceholderAndAutoComplete() {
         self.placeholderLabel.hidden = self.text?.isEmpty == false
 
-        let autoCompleteValue = self.autoCompleteValue
-        self.autoCompleteLabel.text = autoCompleteValue
-        self.autoCompleteLabel.hidden = autoCompleteValue?.isEmpty != false
+        if let autoCompleteValue = self.autoCompleteValue {
+            if let text = self.text, font = self.font {
+                let textLength = (text as NSString).boundingRectWithSize(
+                    self.bounds.size, options: [],
+                    attributes: [NSFontAttributeName: font], context: nil
+                )
+                self.autoCompleteLabelConstraint.constant = textLength.width
+                let startIndex = autoCompleteValue.startIndex.advancedBy(text.characters.count)
+                self.autoCompleteLabel.text = autoCompleteValue.substringFromIndex(startIndex)
+            } else {
+                self.autoCompleteLabelConstraint.constant = 0
+                self.autoCompleteLabel.text = autoCompleteValue
+            }
+            self.autoCompleteLabel.hidden = false
+        } else {
+            self.autoCompleteLabel.hidden = true
+        }
     }
 
     internal func autoCompleteMatch() -> String? {
