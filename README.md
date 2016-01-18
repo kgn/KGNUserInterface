@@ -116,11 +116,28 @@ This struct includes formatter methods `Style.Format.Date`. You can extend this 
 ``` Swift
 cell.dateLabel.text = Style.Format.Date(creationDate, includeTime: true)
 ```
-### Label & Button
+### Label, Button & TextField
 
-`KGNUserInterface` defines a `Label` subclass of `PreferredFontLabel` as well as a `Button` subclass of `PreferredFontButton`. Both subclasses set the `preferredFontManager` property to `Style.PreferredFontManager`.
+`KGNUserInterface` defines a `Label` subclass of `PreferredFontLabel`, a `Button` subclass of `PreferredFontButton`, and a `TextField` subclass of `PreferredFontTextField`. All subclasses set the `preferredFontManager` property to `Style.PreferredFontManager`.
 
-`Label` also exposes properties to control the width and height intrinsic content size without having to subclass the label through `allowIntrinsicWidth` and `allowIntrinsicHeight`.
+`Label` and `TextField` expose properties to control the width and height intrinsic content size without having to subclass through `allowIntrinsicWidth` and `allowIntrinsicHeight`.
+
+`TextField` also has an auto complete feature that suggests text to the user as they type. To add auto complete suggestions simply set the `autoCompleteValues` property to an array of values. For example, the following code will auto complete email address domains as the user types:
+
+``` Swift
+let textField = TextField()
+textField.autoCompleteValues = [
+    "@aol.com",
+    "@me.com",
+    "@mac.com",
+    "@gmail.com",
+    "@yahoo.com"
+]
+```
+
+![Auto Complete Email](AutoComplete.gif)
+
+By default the suggestions are case insensitive, if the auto complete should be case sensitive simply set `textField.autoCompleteIgnoreCase = false`.
 
 ## Progress
 - [ ] Tests
