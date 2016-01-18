@@ -192,6 +192,7 @@ public class TextField: PreferredFontTextField {
             compareText = compareText.lowercaseString
         }
 
+        // Loop through all the auto complete values to find a match
         for suffix in autoCompleteValues {
             var compareSuffix = suffix
             if self.autoCompleteIgnoreCase {
@@ -202,7 +203,8 @@ public class TextField: PreferredFontTextField {
                 continue
             }
 
-            // Find the location of the first character in the suffix
+            // Find the location of the first character from the suffix in the text,
+            // if it exists...
             var textLocation: Int?
             for (t, textCharacter) in compareText.characters.enumerate() {
                 if firstSuffixCharacter == textCharacter {
@@ -238,7 +240,9 @@ public class TextField: PreferredFontTextField {
                 continue
             }
             
-            // Return the full text with the complete suffix
+            // Return the full text with the complete suffix,
+            // this cuases the function to early exit when the
+            // first match is found
             let index = suffix.startIndex.advancedBy(length)
             return text+suffix.substringFromIndex(index)
             
