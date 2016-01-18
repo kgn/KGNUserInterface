@@ -38,6 +38,21 @@ public class TextField: PreferredFontTextField {
         }
     }
 
+    /// Suffix values to use for auto complete
+    /// Useful for auto completing email addresses and other common text inputs
+    public var autoCompleteValues: [String]?
+
+    /// Determins if the auto complete match should ignore case
+    /// Defaults to `true`
+    public var autoCompleteIgnoreCase = true
+
+    /// The current auto complete value
+    public var autoCompleteValue: String? {
+        get {
+            return self.autoCompleteMatch()
+        }
+    }
+
     override public var textStyle: String {
         didSet {
             self.placeholderLabel.textStyle = self.textStyle
@@ -99,6 +114,75 @@ public class TextField: PreferredFontTextField {
         self.addSubview(self.placeholderLabel)
         self.placeholderLabel.centerVerticallyInSuperview()
         self.placeholderLabel.pinToLeftEdgeOfSuperview()
+    }
+
+    internal func autoCompleteMatch() -> String? {
+        guard let autoCompleteValues = self.autoCompleteValues where autoCompleteValues.count > 0 else {
+            return nil
+        }
+        guard let text = self.text where !text.isEmpty else {
+            return nil
+        }
+
+        var compareText = text
+        if self.autoCompleteIgnoreCase {
+            compareText = compareText.lowercaseString
+        }
+
+        for suffix in autoCompleteValues {
+            var compareSuffix = suffix
+            if self.autoCompleteIgnoreCase {
+                compareSuffix = suffix.lowercaseString
+            }
+
+            guard let firstSuffixCharacter = compareSuffix.characters.first else {
+                continue
+            }
+
+            // Find the location of the first character in the suffix
+            var textLocation: Int?
+            for (t, textCharacter) in compareText.characters.enumerate() {
+                if firstSuffixCharacter == textCharacter {
+                    textLocation = t
+                    break
+                }
+            }
+
+            guard let location = textLocation else {
+                continue
+            }
+
+            // Find all the following matching characters
+            var length = 1
+            var suffixArray = Array(compareSuffix.characters)
+            var textArray = Array(compareText.characters)
+
+            if length+location < textArray.count {
+                while suffixArray[length] == textArray[length+location] {
+                    ++length
+
+                    if length >= suffixArray.count {
+                        break
+                    }
+
+                    if length+location >= textArray.count {
+                        break
+                    }
+                }
+            }
+            
+            if textArray.count > location+length {
+                print("fail")
+                continue
+            }
+            
+            // Return the full text with the complete suffix
+            let index = suffix.startIndex.advancedBy(length)
+            return text+suffix.substringFromIndex(index)
+            
+        }
+
+        return nil
     }
 
 }
