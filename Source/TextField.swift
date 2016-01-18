@@ -22,22 +22,6 @@ public class TextField: PreferredFontTextField {
     /// `UIViewNoIntrinsicMetric` can also be used used.
     public var intrinsicHeight: CGFloat?
 
-    override public var text: String? {
-        get {
-            return super.text
-        }
-
-        set(newValue) {
-            super.text = newValue
-
-            if self.text == nil || self.text == "" {
-                self.placeholderLabel.hidden = false
-            } else {
-                self.placeholderLabel.hidden = true
-            }
-        }
-    }
-
     /// Suffix values to use for auto complete
     /// Useful for auto completing email addresses and other common text inputs
     public var autoCompleteValues: [String]?
@@ -53,15 +37,29 @@ public class TextField: PreferredFontTextField {
         }
     }
 
+    override public var text: String? {
+        get {
+            return super.text
+        }
+
+        set(newValue) {
+            super.text = newValue
+            self.updatePlaceholderAndAutoComplete()
+        }
+    }
+
+
     override public var textStyle: String {
         didSet {
             self.placeholderLabel.textStyle = self.textStyle
+            self.autoCompleteLabel.textStyle = self.textStyle
         }
     }
 
     override public var preferredFontManager: PreferredFontManager? {
         didSet {
             self.placeholderLabel.preferredFontManager = self.preferredFontManager
+            self.autoCompleteLabel.preferredFontManager = self.preferredFontManager
         }
     }
 
@@ -88,7 +86,21 @@ public class TextField: PreferredFontTextField {
         }
     }
 
+    /// The color of the auto complete text.
+    public var autoCompleteColor: UIColor? {
+        didSet {
+            self.autoCompleteLabel.textColor = self.autoCompleteColor
+        }
+    }
+
     private lazy var placeholderLabel: Label = {
+        let label = Label(textStyle: self.textStyle)
+        label.textColor = self.placeholderColor
+        label.text = self.placeholder
+        return label
+    }()
+
+    private lazy var autoCompleteLabel: Label = {
         let label = Label(textStyle: self.textStyle)
         label.textColor = self.placeholderColor
         label.text = self.placeholder
@@ -114,6 +126,32 @@ public class TextField: PreferredFontTextField {
         self.addSubview(self.placeholderLabel)
         self.placeholderLabel.centerVerticallyInSuperview()
         self.placeholderLabel.pinToLeftEdgeOfSuperview()
+
+        self.addSubview(self.autoCompleteLabel)
+        self.autoCompleteLabel.centerVerticallyInSuperview()
+        self.autoCompleteLabel.pinToLeftEdgeOfSuperview()
+
+        NSNotificationCenter.defaultCenter().addObserver(
+            self, selector: "textDidChange:",
+            name: UITextFieldTextDidChangeNotification,
+            object: self
+        )
+    }
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
+    @objc private func textDidChange(notification: NSNotification) {
+        self.updatePlaceholderAndAutoComplete()
+    }
+
+    private func updatePlaceholderAndAutoComplete() {
+        self.placeholderLabel.hidden = self.text?.isEmpty == false
+
+        let autoCompleteValue = self.autoCompleteValue
+        self.autoCompleteLabel.text = autoCompleteValue
+        self.autoCompleteLabel.hidden = autoCompleteValue?.isEmpty != false
     }
 
     internal func autoCompleteMatch() -> String? {
@@ -172,7 +210,6 @@ public class TextField: PreferredFontTextField {
             }
             
             if textArray.count > location+length {
-                print("fail")
                 continue
             }
             

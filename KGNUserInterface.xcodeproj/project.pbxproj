@@ -17,14 +17,24 @@
 		836E69A21BCCD3B40089EAB1 /* KGNUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */; };
 		836E69A71BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E69A61BCCD3B40089EAB1 /* KGNUserInterfaceTests.swift */; };
 		8399B23A1BEE49F200C9E1B3 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2391BEE49F200C9E1B3 /* UIView+Snapshot.swift */; };
+		839F08BB1C4C9C3400617E36 /* KGNUserInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83BB081A1BE7A38500D4173B /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08181BE7A38500D4173B /* GradientViewController.swift */; };
 		83BB081B1BE7A38500D4173B /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08191BE7A38500D4173B /* TitleBarView.swift */; };
 		83C5DF7C1BF5CA9F00A97524 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5DF7B1BF5CA9E00A97524 /* ImageView.swift */; };
+		83CD8D081C4C97C9006C2852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CD8D041C4C97C9006C2852 /* AppDelegate.swift */; };
+		83CD8D0A1C4C97C9006C2852 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CD8D061C4C97C9006C2852 /* Launch Screen.storyboard */; };
+		83CD8D0B1C4C97C9006C2852 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CD8D071C4C97C9006C2852 /* TextFieldViewController.swift */; };
 		83DC54211C4C4F1D00CF23A9 /* KGNAutoLayout.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83DC54221C4C4F1D00CF23A9 /* KGNColor.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D191BDDC30D001C01CF /* KGNColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83DC54231C4C4F1D00CF23A9 /* KGNGradientView.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1A1BDDC30D001C01CF /* KGNGradientView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83DC54241C4C4F1D00CF23A9 /* KGNPreferredFontManager.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1B1BDDC30E001C01CF /* KGNPreferredFontManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83DC54251C4C4F1D00CF23A9 /* NSDateTimeAgo.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1C1BDDC30E001C01CF /* NSDateTimeAgo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83DC543E1C4C7E9F00CF23A9 /* KGNUserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */; };
+		83DC543F1C4C7EA300CF23A9 /* KGNAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */; };
+		83DC54401C4C7EA300CF23A9 /* KGNColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D191BDDC30D001C01CF /* KGNColor.framework */; };
+		83DC54411C4C7EA300CF23A9 /* KGNGradientView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1A1BDDC30D001C01CF /* KGNGradientView.framework */; };
+		83DC54421C4C7EA300CF23A9 /* KGNPreferredFontManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1B1BDDC30E001C01CF /* KGNPreferredFontManager.framework */; };
+		83DC54431C4C7EA300CF23A9 /* NSDateTimeAgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1C1BDDC30E001C01CF /* NSDateTimeAgo.framework */; };
 		83E06D111BDDC0E8001C01CF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */; };
 		83E06D131BDDC151001C01CF /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D121BDDC151001C01CF /* Style.swift */; };
 		83E06D161BDDC1F7001C01CF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D141BDDC1F7001C01CF /* Button.swift */; };
@@ -44,9 +54,27 @@
 			remoteGlobalIDString = 836E69961BCCD3B40089EAB1;
 			remoteInfo = KGNUserInterface;
 		};
+		83DC543C1C4C7E9800CF23A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 836E698E1BCCD3B30089EAB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 836E69961BCCD3B40089EAB1;
+			remoteInfo = KGNUserInterface;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		839F08B51C4C9C1C00617E36 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				839F08BB1C4C9C3400617E36 /* KGNUserInterface.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83DC54201C4C4F0E00CF23A9 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,6 +104,11 @@
 		83BB08181BE7A38500D4173B /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		83BB08191BE7A38500D4173B /* TitleBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBarView.swift; sourceTree = "<group>"; };
 		83C5DF7B1BF5CA9E00A97524 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		83CD8D041C4C97C9006C2852 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		83CD8D051C4C97C9006C2852 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = SOURCE_ROOT; };
+		83CD8D061C4C97C9006C2852 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Example/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
+		83CD8D071C4C97C9006C2852 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldViewController.swift; path = Example/TextFieldViewController.swift; sourceTree = SOURCE_ROOT; };
+		83DC542A1C4C7DBC00CF23A9 /* KGNUserInterfaceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGNUserInterfaceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		83E06D121BDDC151001C01CF /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		83E06D141BDDC1F7001C01CF /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -113,15 +146,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83DC54271C4C7DBC00CF23A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83DC543E1C4C7E9F00CF23A9 /* KGNUserInterface.framework in Frameworks */,
+				83DC543F1C4C7EA300CF23A9 /* KGNAutoLayout.framework in Frameworks */,
+				83DC54401C4C7EA300CF23A9 /* KGNColor.framework in Frameworks */,
+				83DC54411C4C7EA300CF23A9 /* KGNGradientView.framework in Frameworks */,
+				83DC54421C4C7EA300CF23A9 /* KGNPreferredFontManager.framework in Frameworks */,
+				83DC54431C4C7EA300CF23A9 /* NSDateTimeAgo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		836E698D1BCCD3B30089EAB1 = {
 			isa = PBXGroup;
 			children = (
+				83DC542B1C4C7DBD00CF23A9 /* Example */,
 				836E69991BCCD3B40089EAB1 /* Source */,
-				83DC541F1C4C4C8300CF23A9 /* Frameworks */,
 				836E69A51BCCD3B40089EAB1 /* Tests */,
+				83DC541F1C4C4C8300CF23A9 /* Frameworks */,
 				836E69981BCCD3B40089EAB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +178,7 @@
 			children = (
 				836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */,
 				836E69A11BCCD3B40089EAB1 /* KGNUserInterfaceTests.xctest */,
+				83DC542A1C4C7DBC00CF23A9 /* KGNUserInterfaceExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +246,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		83DC542B1C4C7DBD00CF23A9 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				83CD8D041C4C97C9006C2852 /* AppDelegate.swift */,
+				83CD8D071C4C97C9006C2852 /* TextFieldViewController.swift */,
+				83CD8D051C4C97C9006C2852 /* Info.plist */,
+				83CD8D061C4C97C9006C2852 /* Launch Screen.storyboard */,
+			);
+			name = Example;
+			path = KGNUserInterfaceExample;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -249,14 +309,34 @@
 			productReference = 836E69A11BCCD3B40089EAB1 /* KGNUserInterfaceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		83DC54291C4C7DBC00CF23A9 /* KGNUserInterfaceExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83DC54391C4C7DBD00CF23A9 /* Build configuration list for PBXNativeTarget "KGNUserInterfaceExample" */;
+			buildPhases = (
+				83DC54261C4C7DBC00CF23A9 /* Sources */,
+				83DC54271C4C7DBC00CF23A9 /* Frameworks */,
+				83DC54281C4C7DBC00CF23A9 /* Resources */,
+				839F08B41C4C9B6E00617E36 /* ShellScript */,
+				839F08B51C4C9C1C00617E36 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83DC543D1C4C7E9800CF23A9 /* PBXTargetDependency */,
+			);
+			name = KGNUserInterfaceExample;
+			productName = KGNUserInterfaceExample;
+			productReference = 83DC542A1C4C7DBC00CF23A9 /* KGNUserInterfaceExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		836E698E1BCCD3B30089EAB1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "David Keegan";
 				TargetAttributes = {
 					836E69961BCCD3B40089EAB1 = {
@@ -264,6 +344,9 @@
 					};
 					836E69A01BCCD3B40089EAB1 = {
 						CreatedOnToolsVersion = 7.0.1;
+					};
+					83DC54291C4C7DBC00CF23A9 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -273,6 +356,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 836E698D1BCCD3B30089EAB1;
 			productRefGroup = 836E69981BCCD3B40089EAB1 /* Products */;
@@ -281,6 +365,7 @@
 			targets = (
 				836E69961BCCD3B40089EAB1 /* KGNUserInterface */,
 				836E69A01BCCD3B40089EAB1 /* KGNUserInterfaceTests */,
+				83DC54291C4C7DBC00CF23A9 /* KGNUserInterfaceExample */,
 			);
 		};
 /* End PBXProject section */
@@ -300,7 +385,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83DC54281C4C7DBC00CF23A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CD8D0A1C4C97C9006C2852 /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		839F08B41C4C9B6E00617E36 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KGNAutoLayout.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KGNColor.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSDateTimeAgo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KGNPreferredFontManager.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KGNGradientView.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		836E69921BCCD3B40089EAB1 /* Sources */ = {
@@ -327,6 +441,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83DC54261C4C7DBC00CF23A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CD8D0B1C4C97C9006C2852 /* TextFieldViewController.swift in Sources */,
+				83CD8D081C4C97C9006C2852 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -334,6 +457,11 @@
 			isa = PBXTargetDependency;
 			target = 836E69961BCCD3B40089EAB1 /* KGNUserInterface */;
 			targetProxy = 836E69A31BCCD3B40089EAB1 /* PBXContainerItemProxy */;
+		};
+		83DC543D1C4C7E9800CF23A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 836E69961BCCD3B40089EAB1 /* KGNUserInterface */;
+			targetProxy = 83DC543C1C4C7E9800CF23A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -500,6 +628,39 @@
 			};
 			name = Release;
 		};
+		83DC543A1C4C7DBD00CF23A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidkeegan.KGNUserInterfaceExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83DC543B1C4C7DBD00CF23A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidkeegan.KGNUserInterfaceExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -526,6 +687,15 @@
 			buildConfigurations = (
 				836E69AF1BCCD3B40089EAB1 /* Debug */,
 				836E69B01BCCD3B40089EAB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83DC54391C4C7DBD00CF23A9 /* Build configuration list for PBXNativeTarget "KGNUserInterfaceExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83DC543A1C4C7DBD00CF23A9 /* Debug */,
+				83DC543B1C4C7DBD00CF23A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
