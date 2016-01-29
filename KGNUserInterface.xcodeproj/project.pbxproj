@@ -21,6 +21,7 @@
 		83BB081A1BE7A38500D4173B /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08181BE7A38500D4173B /* GradientViewController.swift */; };
 		83BB081B1BE7A38500D4173B /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB08191BE7A38500D4173B /* TitleBarView.swift */; };
 		83C5DF7C1BF5CA9F00A97524 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5DF7B1BF5CA9E00A97524 /* ImageView.swift */; };
+		83C9C8841C5B4DE000E416D7 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9C8831C5B4DE000E416D7 /* ReusableCell.swift */; };
 		83CD8D081C4C97C9006C2852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CD8D041C4C97C9006C2852 /* AppDelegate.swift */; };
 		83CD8D0A1C4C97C9006C2852 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CD8D061C4C97C9006C2852 /* Launch Screen.storyboard */; };
 		83CD8D0B1C4C97C9006C2852 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CD8D071C4C97C9006C2852 /* TextFieldViewController.swift */; };
@@ -104,6 +105,7 @@
 		83BB08181BE7A38500D4173B /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		83BB08191BE7A38500D4173B /* TitleBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBarView.swift; sourceTree = "<group>"; };
 		83C5DF7B1BF5CA9E00A97524 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		83C9C8831C5B4DE000E416D7 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		83CD8D041C4C97C9006C2852 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		83CD8D051C4C97C9006C2852 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = SOURCE_ROOT; };
 		83CD8D061C4C97C9006C2852 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Example/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -228,8 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				83BB08191BE7A38500D4173B /* TitleBarView.swift */,
-				8399B2391BEE49F200C9E1B3 /* UIView+Snapshot.swift */,
 				83C5DF7B1BF5CA9E00A97524 /* ImageView.swift */,
+				83C9C8831C5B4DE000E416D7 /* ReusableCell.swift */,
+				8399B2391BEE49F200C9E1B3 /* UIView+Snapshot.swift */,
 			);
 			name = UIView;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C9C8841C5B4DE000E416D7 /* ReusableCell.swift in Sources */,
 				83E06D131BDDC151001C01CF /* Style.swift in Sources */,
 				83E06D161BDDC1F7001C01CF /* Button.swift in Sources */,
 				83BB081A1BE7A38500D4173B /* GradientViewController.swift in Sources */,
