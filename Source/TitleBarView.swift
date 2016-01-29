@@ -72,13 +72,8 @@ public class TitleBarView: UIView {
         return label
     }()
 
-    private lazy var leftContainerView: ContentView = {
-        return ContentView()
-    }()
-
-    private lazy var rightContainerView: ContentView = {
-        return ContentView()
-    }()
+    private lazy var leftContainerView: ContentView = ContentView()
+    private lazy var rightContainerView: ContentView = ContentView()
 
     /// Set the title, if `animated` is `true` then a cross dissolve animation is used.
     public func setTitle(title: String?, animated: Bool) {
