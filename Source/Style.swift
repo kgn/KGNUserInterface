@@ -145,6 +145,12 @@ public struct Style {
         /// Base animation long duration: 0.5 seconds
         public static let LongDuration: NSTimeInterval = 0.5
 
+        /// Base animation very long duration: 1.5 seconds
+        public static let VeryLongDuration: NSTimeInterval = 1.5
+
+        /// Base animation very very long duration: 3 seconds
+        public static let VeryVeryLongDuration: NSTimeInterval = 3
+
         /// Base animation spring dampening: 0.4
         public static let Damping: CGFloat = 0.4
 
