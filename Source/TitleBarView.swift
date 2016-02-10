@@ -105,10 +105,10 @@ public class TitleBarView: UIView {
     override public func intrinsicContentSize() -> CGSize {
         if self.traitCollection.userInterfaceIdiom == .Phone {
             if self.traitCollection.verticalSizeClass == .Compact {
-                return CGSizeMake(UIViewNoIntrinsicMetric, Style.Size.NavigationBarHeightCompact)
+                return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeightCompact)
             }
         }
-        return CGSizeMake(UIViewNoIntrinsicMetric, Style.Size.NavigationBarHeight)
+        return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeight)
     }
 
     override public func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {

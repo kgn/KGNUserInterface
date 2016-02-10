@@ -121,13 +121,13 @@ public struct Style {
         public static let iPhone6PlusWidth: CGFloat = 414
 
         // The native screen width in pixels
-        public static let NativeScreenWidth = CGRectGetWidth(UIScreen.mainScreen().nativeBounds)/UIScreen.mainScreen().nativeScale
+        public static let NativeScreenWidth = UIScreen.mainScreen().nativeBounds.width/UIScreen.mainScreen().nativeScale
 
         // The native screen height in pixels
-        public static let NativeScreenHeight = CGRectGetHeight(UIScreen.mainScreen().nativeBounds)/UIScreen.mainScreen().nativeScale
+        public static let NativeScreenHeight = UIScreen.mainScreen().nativeBounds.height/UIScreen.mainScreen().nativeScale
 
         // The height of the status bar in points
-        public static let StatusBarHeight = CGRectGetHeight(UIApplication.sharedApplication().statusBarFrame)
+        public static let StatusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
 
         // The maximum width or height of an Instagram photo in pixels
         public static let MaxInstagramSize: CGFloat = 1080
@@ -206,10 +206,10 @@ public struct Style {
     public struct Shadow {
 
         /// Base shadow color, defaults to `Style.Color.Black`
-        public static let Color: UIColor = Style.Color.Black
+        public static let Color = Style.Color.Black
 
         /// Base shadow offset: `{0, 1}`
-        public static let Offset: CGSize = CGSizeMake(0, 1)
+        public static let Offset = CGSize(width: 0, height: 1)
 
         /// Base shadow opacity: 0.5
         public static let Opacity: Float = 0.5

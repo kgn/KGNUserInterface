@@ -29,7 +29,7 @@ extension UIView {
      - returns: The image object for the snapshot.
      */
     public func snapshot(opaque: Bool = false, scale: CGFloat = 0, afterScreenUpdates: Bool = false) -> UIImage? {
-        if CGRectEqualToRect(self.bounds, CGRectZero) {
+        if self.bounds == CGRect.zero {
             return nil
         }
 
