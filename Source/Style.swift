@@ -34,6 +34,12 @@ private let numberFormatter: NSNumberFormatter = {
     return numberFormatter
 }()
 
+private let currencyFormatter: NSNumberFormatter = {
+    let numberFormatter = NSNumberFormatter()
+    numberFormatter.numberStyle = .CurrencyStyle
+    return numberFormatter
+}()
+
 /// Base style namespace
 public struct Style {
 
@@ -104,7 +110,7 @@ public struct Style {
         /// Standard iOS navigation bar height, in landscape: 32 point
         public static let NavigationBarHeightCompact: CGFloat = 32
 
-        /// The max width of an item set to 
+        /// The max width of an item set to
         /// the left or right views of a `TitleBarView`
         public static let TitleBarItemMaxWidth: CGFloat = 200
 
@@ -194,10 +200,10 @@ public struct Style {
         public static func Pop(view: UIView, duration: NSTimeInterval = ShortDuration, scale: CGFloat = 1.5, completionBlock: (() -> Void)? = nil) {
             UIView.animateWithDuration(duration*0.5, delay: 0, options: [.CurveEaseInOut, .BeginFromCurrentState], animations: {
                 view.layer.transform = CATransform3DMakeScale(scale, scale, scale)
-            }) { _ in
-                UIView.animateWithDuration(duration) {
-                    view.layer.transform = CATransform3DIdentity
-                }
+                }) { _ in
+                    UIView.animateWithDuration(duration) {
+                        view.layer.transform = CATransform3DIdentity
+                    }
             }
         }
     }
@@ -238,9 +244,9 @@ public struct Style {
          Returns a formatted string for a date.
 
          - parameter date: The date object to format.
-         - parameter includeTime: Defaults to false, 
+         - parameter includeTime: Defaults to false,
          if true time is included in the resulting string object.
-         
+
          - returns: A formatted string for the date.
          */
         public static func Date(date: NSDate, includeTime: Bool = false, calanderIdentifier: String = NSCalendarIdentifierGregorian) -> String? {
@@ -259,34 +265,48 @@ public struct Style {
                 let timeString = timeFormatter.stringFromDate(date)
                 return String(format: NSLocalizedString("%@ at %@", comment: "Date time label"), dateString, timeString)
             }
-            
+
             return dateString
         }
 
         /**
+         Returns a formatted currency string for the given number.
+         Trims trailing zeros: i.e. '$5.00' > '$5'.
+
+         - parameter number: The number object to format.
+
+         - returns: A formatted currency string for the number.
+         */
+        public static func Currency(number: NSNumber) -> String? {
+            let format = currencyFormatter.stringFromNumber(number)
+            if format?.hasSuffix(".00") == true { // TODO: localize '.'
+                return format?.stringByReplacingOccurrencesOfString(".00", withString: "")
+            }
+
+            return format
+        }
+
+        /**
          Returns a formatted percentage string for the given number.
+         Rounds to two decimal places, but trims trailing zeros: i.e. '5.00%' > '5%'.
 
          - parameter number: The number object to format.
 
          - returns: A formatted percentage string for the number.
          */
         public static func Percentage(number: NSNumber) -> String? {
-            if amount == nil {
-                return nil
-            }
-
-            let format = NSString(format: "%.2f", amount!)
-            if format.hasSuffix(".00") == true {
+            let format = NSString(format: "%.2f", number)
+            if format.hasSuffix(".00") == true { // TODO: localize '.'
                 return format.stringByReplacingOccurrencesOfString(".00", withString: "")
             }
             return "\(format)%"
         }
-
+        
         /**
          Returns a formatted string for the given number.
-
+         
          - parameter number: The number object to format.
-
+         
          - returns: A formatted string for the number.
          */
         public static func Number(number: NSNumber) -> String? {
@@ -294,5 +314,5 @@ public struct Style {
         }
         
     }
-
+    
 }
