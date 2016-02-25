@@ -264,6 +264,25 @@ public struct Style {
         }
 
         /**
+         Returns a formatted percentage string for the given number.
+
+         - parameter number: The number object to format.
+
+         - returns: A formatted percentage string for the number.
+         */
+        public static func Percentage(number: NSNumber) -> String? {
+            if amount == nil {
+                return nil
+            }
+
+            let format = NSString(format: "%.2f", amount!)
+            if format.hasSuffix(".00") == true {
+                return format.stringByReplacingOccurrencesOfString(".00", withString: "")
+            }
+            return "\(format)%"
+        }
+
+        /**
          Returns a formatted string for the given number.
 
          - parameter number: The number object to format.
