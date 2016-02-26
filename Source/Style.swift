@@ -277,7 +277,7 @@ public struct Style {
 
          - returns: A formatted currency string for the number.
          */
-        public static func Currency(number: NSNumber) -> String? {
+        public static func Currency(number: Double) -> String? {
             let format = currencyFormatter.stringFromNumber(number)
             if format?.hasSuffix(".00") == true { // TODO: localize '.'
                 return format?.stringByReplacingOccurrencesOfString(".00", withString: "")
@@ -294,7 +294,7 @@ public struct Style {
 
          - returns: A formatted percentage string for the number.
          */
-        public static func Percentage(number: NSNumber) -> String? {
+        public static func Percentage(number: Double) -> String? {
             let format = NSString(format: "%.2f", number)
             if format.hasSuffix(".00") == true { // TODO: localize '.'
                 return format.stringByReplacingOccurrencesOfString(".00", withString: "")
@@ -309,7 +309,7 @@ public struct Style {
          
          - returns: A formatted string for the number.
          */
-        public static func Number(number: NSNumber) -> String? {
+        public static func Number(number: Double) -> String? {
             return numberFormatter.stringFromNumber(number)
         }
         
