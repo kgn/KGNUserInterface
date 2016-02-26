@@ -309,7 +309,7 @@ public struct Style {
          
          - returns: A formatted string for the number.
          */
-        public static func Number(number: Double) -> String? {
+        public static func Number(number: Int) -> String? {
             return numberFormatter.stringFromNumber(number)
         }
         
