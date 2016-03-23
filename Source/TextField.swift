@@ -143,7 +143,7 @@ public class TextField: PreferredFontTextField {
         self.autoCompleteLabelConstraint = self.autoCompleteLabel.pinToLeftEdgeOfSuperview()
 
         NSNotificationCenter.defaultCenter().addObserver(
-            self, selector: "textDidChange:",
+            self, selector: #selector(UITextInputDelegate.textDidChange(_:)),
             name: UITextFieldTextDidChangeNotification,
             object: self
         )
@@ -224,7 +224,7 @@ public class TextField: PreferredFontTextField {
 
             if length+location < textArray.count {
                 while suffixArray[length] == textArray[length+location] {
-                    ++length
+                    length += 1
 
                     if length >= suffixArray.count {
                         break
