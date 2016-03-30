@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "836E69A01BCCD3B40089EAB1"
+               BuildableName = "KGNUserInterfaceTests.xctest"
+               BlueprintName = "KGNUserInterfaceTests"
+               ReferencedContainer = "container:KGNUserInterface.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "836E69961BCCD3B40089EAB1"
+            BuildableName = "KGNUserInterface.framework"
+            BlueprintName = "KGNUserInterface"
+            ReferencedContainer = "container:KGNUserInterface.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
