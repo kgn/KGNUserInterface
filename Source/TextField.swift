@@ -9,6 +9,10 @@
 import UIKit
 import KGNPreferredFontManager
 
+private extension Selector {
+    static let textDidChange = #selector(UITextInputDelegate.textDidChange(_:))
+}
+
 /// Subclass of `PreferredFontTextField`. This implementation also allows
 /// the text color to be set by `Label.appearance().textColor` and adds
 /// a property for setting the color of the placeholder text.
@@ -143,7 +147,7 @@ public class TextField: PreferredFontTextField {
         self.autoCompleteLabelConstraint = self.autoCompleteLabel.pinToLeftEdgeOfSuperview()
 
         NSNotificationCenter.defaultCenter().addObserver(
-            self, selector: #selector(UITextInputDelegate.textDidChange(_:)),
+            self, selector: .textDidChange,
             name: UITextFieldTextDidChangeNotification,
             object: self
         )

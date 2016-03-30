@@ -4,8 +4,7 @@
 
 [![iOS 8.0+](http://img.shields.io/badge/iOS-8.0%2B-blue.svg)]()
 [![watchOS 1.0+](http://img.shields.io/badge/watchOS-1.0%2B-blue.svg)]()
-[![Xcode 7.1](http://img.shields.io/badge/Xcode-7.0-blue.svg)]()
-[![Swift 2.0](http://img.shields.io/badge/Swift-2.0-blue.svg)]()
+[![Swift 2.0+](http://img.shields.io/badge/Swift-2.0-blue.svg)]()
 [![Release](https://img.shields.io/github/release/kgn/KGNUserInterface.svg)](/releases)
 [![Build Status](http://img.shields.io/badge/License-MIT-lightgrey.svg)](/LICENSE)
 
@@ -13,7 +12,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-Compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 
 [![Twitter](https://img.shields.io/badge/Twitter-@iamkgn-55ACEE.svg)](http://twitter.com/iamkgn)
-[![Star](https://img.shields.io/github/followers/kgn.svg?style=social&label=Follow%20%40kgn)](https://github.com/kgn)
+[![Follow](https://img.shields.io/github/followers/kgn.svg?style=social&label=Follow%20%40kgn)](https://github.com/kgn)
 [![Star](https://img.shields.io/github/stars/kgn/KGNUserInterface.svg?style=social&label=Star)](https://github.com/kgn/KGNUserInterface)
 
 ## Installing
@@ -146,3 +145,5 @@ By default the suggestions are case insensitive, if the auto complete should be 
 - [X] Carthage
 - [ ] Description (Add new classes to readme)
 - [X] Documentation
+- [ ] Prebuilt Frameworks
+- [ ] Travis Test Matrix
