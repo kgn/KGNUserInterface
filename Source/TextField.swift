@@ -10,7 +10,7 @@ import UIKit
 import KGNPreferredFontManager
 
 private extension Selector {
-    static let textDidChange = #selector(UITextInputDelegate.textDidChange(_:))
+    static let textDidChange = #selector(TextField.textDidChange)
 }
 
 /// Subclass of `PreferredFontTextField`. This implementation also allows
@@ -148,7 +148,7 @@ public class TextField: PreferredFontTextField {
 
         NotificationCenter.default().addObserver(
             self, selector: .textDidChange,
-            name: NSNotification.Name.UITextFieldTextDidChange,
+            name: .UITextFieldTextDidChange,
             object: self
         )
     }
@@ -157,7 +157,7 @@ public class TextField: PreferredFontTextField {
         NotificationCenter.default().removeObserver(self)
     }
 
-    @objc private func textDidChange(notification: Notification) {
+    @objc private func textDidChange() {
         self.updatePlaceholderAndAutoComplete()
     }
 
