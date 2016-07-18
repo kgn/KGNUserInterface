@@ -13,11 +13,11 @@ class KGNUserInterfaceLabelTests: XCTestCase {
 
     func testAppearanceTextColor() {
         let label1 = Label()
-        XCTAssertEqual(label1.textColor, UIColor.blackColor())
+        XCTAssertEqual(label1.textColor, UIColor.black())
 
-        Label.appearance().textColor = UIColor.redColor()
+        Label.appearance().textColor = UIColor.red()
         let label2 = Label()
-        XCTAssertEqual(label2.textColor, UIColor.redColor())
+        XCTAssertEqual(label2.textColor, UIColor.red())
     }
 
 }
@@ -26,11 +26,11 @@ class KGNUserInterfaceTextFieldTests: XCTestCase {
 
     func testAppearanceTextColor() {
         let textField1 = TextField()
-        XCTAssertEqual(textField1.textColor, UIColor.blackColor())
+        XCTAssertEqual(textField1.textColor, UIColor.black())
 
-        TextField.appearance().textColor = UIColor.redColor()
+        TextField.appearance().textColor = UIColor.red()
         let textField2 = TextField()
-        XCTAssertEqual(textField2.textColor, UIColor.redColor())
+        XCTAssertEqual(textField2.textColor, UIColor.red())
     }
 
     func testAutoCompleteEmail() {

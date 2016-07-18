@@ -146,40 +146,40 @@ public class TextField: PreferredFontTextField {
         self.autoCompleteLabel.centerVerticallyInSuperview()
         self.autoCompleteLabelConstraint = self.autoCompleteLabel.pinToLeftEdgeOfSuperview()
 
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default().addObserver(
             self, selector: .textDidChange,
-            name: UITextFieldTextDidChangeNotification,
+            name: NSNotification.Name.UITextFieldTextDidChange,
             object: self
         )
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default().removeObserver(self)
     }
 
-    @objc private func textDidChange(notification: NSNotification) {
+    @objc private func textDidChange(notification: Notification) {
         self.updatePlaceholderAndAutoComplete()
     }
 
     private func updatePlaceholderAndAutoComplete() {
-        self.placeholderLabel.hidden = self.text?.isEmpty == false
+        self.placeholderLabel.isHidden = self.text?.isEmpty == false
 
         if let autoCompleteValue = self.autoCompleteValue {
             if let text = self.text, font = self.font {
-                let textLength = (text as NSString).boundingRectWithSize(
-                    self.bounds.size, options: [],
+                let textLength = (text as NSString).boundingRect(
+                    with: self.bounds.size, options: [],
                     attributes: [NSFontAttributeName: font], context: nil
                 )
                 self.autoCompleteLabelConstraint.constant = textLength.width
-                let startIndex = autoCompleteValue.startIndex.advancedBy(text.characters.count)
-                self.autoCompleteLabel.text = autoCompleteValue.substringFromIndex(startIndex)
+                let startIndex = autoCompleteValue.characters.index(autoCompleteValue.startIndex, offsetBy: text.characters.count)
+                self.autoCompleteLabel.text = autoCompleteValue.substring(from: startIndex)
             } else {
                 self.autoCompleteLabelConstraint.constant = 0
                 self.autoCompleteLabel.text = autoCompleteValue
             }
-            self.autoCompleteLabel.hidden = false
+            self.autoCompleteLabel.isHidden = false
         } else {
-            self.autoCompleteLabel.hidden = true
+            self.autoCompleteLabel.isHidden = true
         }
     }
 
@@ -193,14 +193,14 @@ public class TextField: PreferredFontTextField {
 
         var compareText = text
         if self.autoCompleteIgnoreCase {
-            compareText = compareText.lowercaseString
+            compareText = compareText.lowercased()
         }
 
         // Loop through all the auto complete values to find a match
         for suffix in autoCompleteValues {
             var compareSuffix = suffix
             if self.autoCompleteIgnoreCase {
-                compareSuffix = suffix.lowercaseString
+                compareSuffix = suffix.lowercased()
             }
 
             guard let firstSuffixCharacter = compareSuffix.characters.first else {
@@ -210,7 +210,7 @@ public class TextField: PreferredFontTextField {
             // Find the location of the first character from the suffix in the text,
             // if it exists...
             var textLocation: Int?
-            for (t, textCharacter) in compareText.characters.enumerate() {
+            for (t, textCharacter) in compareText.characters.enumerated() {
                 if firstSuffixCharacter == textCharacter {
                     textLocation = t
                     break
@@ -247,8 +247,8 @@ public class TextField: PreferredFontTextField {
             // Return the full text with the complete suffix,
             // this cuases the function to early exit when the
             // first match is found
-            let index = suffix.startIndex.advancedBy(length)
-            return text+suffix.substringFromIndex(index)
+            let index = suffix.characters.index(suffix.startIndex, offsetBy: length)
+            return text+suffix.substring(from: index)
             
         }
 

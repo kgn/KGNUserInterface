@@ -23,22 +23,22 @@ public class Button: PreferredFontButton {
     /// Helper property that sets the button title for the `Normal` state
     public var title: String? {
         get {
-            return self.titleForState(.Normal)
+            return self.title(for: [])
         }
 
         set(title) {
-            self.setTitle(title, forState: .Normal)
+            self.setTitle(title, for: [])
         }
     }
 
     /// Helper property that sets the button image for the `Normal` state
     public var image: UIImage? {
         get {
-            return self.imageForState(.Normal)
+            return self.image(for: [])
         }
 
         set(image) {
-            self.setImage(image, forState: .Normal)
+            self.setImage(image, for: [])
         }
     }
 
@@ -53,10 +53,10 @@ public class Button: PreferredFontButton {
 
      - returns: The button object.
      */
-    public class func systemButton(title title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Self {
-        let button = self.init(type: .System)
+    public class func systemButton(withTitle title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
+        let button = self.init(type: .system)
         button.title = title
-        button.addTarget(target, action: action, forControlEvents: events)
+        button.addTarget(target, action: action, for: events)
         return button
     }
 
@@ -71,10 +71,10 @@ public class Button: PreferredFontButton {
 
      - returns: The button object.
      */
-    public class func systemButton(imageNamed imageNamed: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .TouchUpInside) -> Self {
-        let button = self.init(type: .System)
+    public class func systemButton(imageNamed: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
+        let button = self.init(type: .system)
         button.image = UIImage(named: imageNamed)
-        button.addTarget(target, action: action, forControlEvents: events)
+        button.addTarget(target, action: action, for: events)
         return button
     }
 

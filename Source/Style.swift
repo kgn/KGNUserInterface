@@ -14,29 +14,29 @@ import KGNGradientView
 /// CGFloat value for Pi
 public let π = CGFloat(M_PI)
 
-private let dateFormatter: NSDateFormatter = {
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.timeStyle = .NoStyle
-    dateFormatter.dateStyle = .LongStyle
+private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeStyle = .noStyle
+    dateFormatter.dateStyle = .longStyle
     return dateFormatter
 }()
 
-private let timeFormatter: NSDateFormatter = {
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.timeStyle = .ShortStyle
-    dateFormatter.dateStyle = .NoStyle
+private let timeFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeStyle = .shortStyle
+    dateFormatter.dateStyle = .noStyle
     return dateFormatter
 }()
 
-private let numberFormatter: NSNumberFormatter = {
-    let numberFormatter = NSNumberFormatter()
+private let numberFormatter: NumberFormatter = {
+    let numberFormatter = NumberFormatter()
     numberFormatter.usesGroupingSeparator = true
     return numberFormatter
 }()
 
-private let currencyFormatter: NSNumberFormatter = {
-    let numberFormatter = NSNumberFormatter()
-    numberFormatter.numberStyle = .CurrencyStyle
+private let currencyFormatter: NumberFormatter = {
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .currency
     return numberFormatter
 }()
 
@@ -47,16 +47,16 @@ public struct Style {
     public struct Color {
 
         /// Pure white color
-        public static let White = UIColor.whiteColor()
+        public static let White = UIColor.white()
 
         /// Pure black color
-        public static let Black = UIColor.blackColor()
+        public static let Black = UIColor.black()
 
         /// Clear white color with 0 alpha
-        public static let ClearWhite = White.colorWithAlphaComponent(0)
+        public static let ClearWhite = White.withAlphaComponent(0)
 
         /// Clear black color with 0 alpha
-        public static let ClearBlack = Black.colorWithAlphaComponent(0)
+        public static let ClearBlack = Black.withAlphaComponent(0)
 
     }
 
@@ -78,7 +78,7 @@ public struct Style {
     public struct Size {
 
         /// The scale of the main screen
-        public static let ScreenScale: CGFloat = UIScreen.mainScreen().scale
+        public static let ScreenScale: CGFloat = UIScreen.main().scale
 
         /// One point
         public static let OnePoint: CGFloat = 1
@@ -127,13 +127,13 @@ public struct Style {
         public static let iPhone6PlusWidth: CGFloat = 414
 
         // The native screen width in pixels
-        public static let NativeScreenWidth = UIScreen.mainScreen().nativeBounds.width/UIScreen.mainScreen().nativeScale
+        public static let NativeScreenWidth = UIScreen.main().nativeBounds.width/UIScreen.main().nativeScale
 
         // The native screen height in pixels
-        public static let NativeScreenHeight = UIScreen.mainScreen().nativeBounds.height/UIScreen.mainScreen().nativeScale
+        public static let NativeScreenHeight = UIScreen.main().nativeBounds.height/UIScreen.main().nativeScale
 
         // The height of the status bar in points
-        public static let StatusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
+        public static let StatusBarHeight = UIApplication.shared().statusBarFrame.height
 
         // The maximum width or height of an Instagram photo in pixels
         public static let MaxInstagramSize: CGFloat = 1080
@@ -143,19 +143,19 @@ public struct Style {
     public struct Animation {
 
         /// Base animation short duration: 0.1 seconds
-        public static let ShortDuration: NSTimeInterval = 0.1
+        public static let ShortDuration: TimeInterval = 0.1
 
         /// Base animation duration: 0.25 seconds
-        public static let Duration: NSTimeInterval = 0.25
+        public static let Duration: TimeInterval = 0.25
 
         /// Base animation long duration: 0.5 seconds
-        public static let LongDuration: NSTimeInterval = 0.5
+        public static let LongDuration: TimeInterval = 0.5
 
         /// Base animation very long duration: 1.5 seconds
-        public static let VeryLongDuration: NSTimeInterval = 1.5
+        public static let VeryLongDuration: TimeInterval = 1.5
 
         /// Base animation very very long duration: 3 seconds
-        public static let VeryVeryLongDuration: NSTimeInterval = 3
+        public static let VeryVeryLongDuration: TimeInterval = 3
 
         /// Base animation spring dampening: 0.4
         public static let Damping: CGFloat = 0.4
@@ -171,7 +171,7 @@ public struct Style {
          - parameter offset: The offset amount to transform the view by, defaults to `Size.Padding`.
          - parameter completionBlock: The completion block to call once the animation has finished.
          */
-        public static func Shake(view: UIView, duration: NSTimeInterval = Duration, offset: CGFloat = Size.Padding, completionBlock: (() -> Void)? = nil) {
+        public static func Shake(view: UIView, duration: TimeInterval = Duration, offset: CGFloat = Size.Padding, completionBlock: (() -> Void)? = nil) {
             let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
             animation.duration = duration
@@ -184,7 +184,7 @@ public struct Style {
             ]
 
             CATransaction.begin()
-            view.layer.addAnimation(animation, forKey: "shake")
+            view.layer.add(animation, forKey: "shake")
             CATransaction.setCompletionBlock(completionBlock)
             CATransaction.commit()
         }
@@ -197,11 +197,11 @@ public struct Style {
          - parameter scale: The offset amount to scale the view by, defaults to `1.5`.
          - parameter completionBlock: The completion block to call once the animation has finished.
          */
-        public static func Pop(view: UIView, duration: NSTimeInterval = ShortDuration, scale: CGFloat = 1.5, completionBlock: (() -> Void)? = nil) {
-            UIView.animateWithDuration(duration*0.5, delay: 0, options: [.CurveEaseInOut, .BeginFromCurrentState], animations: {
+        public static func Pop(view: UIView, duration: TimeInterval = ShortDuration, scale: CGFloat = 1.5, completionBlock: (() -> Void)? = nil) {
+            UIView.animate(withDuration: duration*0.5, delay: 0, options: .beginFromCurrentState, animations: {
                 view.layer.transform = CATransform3DMakeScale(scale, scale, scale)
                 }) { _ in
-                    UIView.animateWithDuration(duration) {
+                    UIView.animate(withDuration: duration) {
                         view.layer.transform = CATransform3DIdentity
                     }
             }
@@ -228,8 +228,8 @@ public struct Style {
 
          - parameter view: The view to apply the shadow to.
          */
-        public static func Apply(view: UIView) {
-            view.layer.shadowColor = Color.CGColor
+        public static func Apply(toView view: UIView) {
+            view.layer.shadowColor = Color.cgColor
             view.layer.shadowOffset = Offset
             view.layer.shadowOpacity = Opacity
             view.layer.shadowRadius = Radius
@@ -249,20 +249,20 @@ public struct Style {
 
          - returns: A formatted string for the date.
          */
-        public static func Date(date: NSDate, includeTime: Bool = false, calanderIdentifier: String = NSCalendarIdentifierGregorian) -> String? {
+        public static func Date(from date: Foundation.Date, includeTime: Bool = false, calanderIdentifier: String = Calendar.Identifier.gregorian.rawValue) -> String? {
             var dateString = date.timeAgo
 
-            guard let calander = NSCalendar(identifier: calanderIdentifier) else {
+            guard let calander = Calendar(identifier: Calendar.Identifier(rawValue: calanderIdentifier)) else {
                 return nil
             }
 
-            let components = calander.components([.Month, .Year], fromDate: date, toDate: NSDate(), options: [])
+            let components = calander.components([.month, .year], from: date, to: Foundation.Date(), options: [])
             if components.year >= 1 || components.month > 1 {
-                dateString = dateFormatter.stringFromDate(date)
+                dateString = dateFormatter.string(from: date)
             }
 
             if includeTime {
-                let timeString = timeFormatter.stringFromDate(date)
+                let timeString = timeFormatter.string(from: date)
                 return String(format: NSLocalizedString("%@ at %@", comment: "Date time label"), dateString, timeString)
             }
 
@@ -277,10 +277,10 @@ public struct Style {
 
          - returns: A formatted currency string for the number.
          */
-        public static func Currency(number: Double) -> String? {
-            let format = currencyFormatter.stringFromNumber(number)
+        public static func Currency(from number: Double) -> String? {
+            let format = currencyFormatter.string(from: number)
             if format?.hasSuffix(".00") == true { // TODO: localize '.'
-                return format?.stringByReplacingOccurrencesOfString(".00", withString: "")
+                return format?.replacingOccurrences(of: ".00", with: "")
             }
 
             return format
@@ -294,10 +294,10 @@ public struct Style {
 
          - returns: A formatted percentage string for the number.
          */
-        public static func Percentage(number: Double) -> String? {
+        public static func Percentage(from number: Double) -> String? {
             let format = NSString(format: "%.2f", number)
             if format.hasSuffix(".00") == true { // TODO: localize '.'
-                return format.stringByReplacingOccurrencesOfString(".00", withString: "")
+                return format.replacingOccurrences(of: ".00", with: "")
             }
             return "\(format)%"
         }
@@ -309,8 +309,8 @@ public struct Style {
          
          - returns: A formatted string for the number.
          */
-        public static func Number(number: Int) -> String? {
-            return numberFormatter.stringFromNumber(number)
+        public static func Number(from number: Int) -> String? {
+            return numberFormatter.string(from: number)
         }
         
     }

@@ -76,7 +76,7 @@ public class TitleBarView: UIView {
     private lazy var rightContainerView: ContentView = ContentView()
 
     /// Set the title, if `animated` is `true` then a cross dissolve animation is used.
-    public func setTitle(title: String?, animated: Bool) {
+    public func set(title: String?, animated: Bool) {
         defer {
             self.title = title
         }
@@ -94,24 +94,24 @@ public class TitleBarView: UIView {
         titleLabelImageView.centerInSuperview()
 
         self.titleLabel.alpha = 0
-        UIView.animateWithDuration(Style.Animation.Duration, animations: {
+        UIView.animate(withDuration: Style.Animation.Duration, animations: {
             self.titleLabel.alpha = 1
             titleLabelImageView.alpha = 0
-            }) { _ in
-                titleLabelImageView.removeFromSuperview()
+        }) { _ in
+            titleLabelImageView.removeFromSuperview()
         }
     }
 
     override public func intrinsicContentSize() -> CGSize {
-        if self.traitCollection.userInterfaceIdiom == .Phone {
-            if self.traitCollection.verticalSizeClass == .Compact {
+        if self.traitCollection.userInterfaceIdiom == .phone {
+            if self.traitCollection.verticalSizeClass == .compact {
                 return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeightCompact)
             }
         }
         return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeight)
     }
 
-    override public func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         self.invalidateIntrinsicContentSize()
     }
@@ -128,27 +128,27 @@ public class TitleBarView: UIView {
 
     private func setup() {
         self.addSubview(self.leftContainerView)
-        self.leftContainerView.sizeToMaxWidth(Style.Size.TitleBarItemMaxWidth)
+        self.leftContainerView.size(toMaxWidth: Style.Size.TitleBarItemMaxWidth)
         self.leftContainerView.pinToTopAndBottomEdgesOfSuperview()
         self.leftContainerView.pinToLeftEdgeOfSuperview(offset: Style.Size.SmallPadding)
 
         self.addSubview(self.rightContainerView)
-        self.rightContainerView.sizeToMaxWidth(Style.Size.TitleBarItemMaxWidth)
+        self.rightContainerView.size(toMaxWidth: Style.Size.TitleBarItemMaxWidth)
         self.rightContainerView.pinToTopAndBottomEdgesOfSuperview()
         self.rightContainerView.pinToRightEdgeOfSuperview(offset: Style.Size.SmallPadding)
 
         self.addSubview(self.titleLabel)
         self.titleLabel.centerInSuperview()
         self.constrain(
-            self.titleLabel, attribute: .Left,
-            relatedBy: .GreaterThanOrEqual,
-            toItem: self.leftContainerView, attribute: .Right,
+            item: self.titleLabel, attribute: .left,
+            relatedBy: .greaterThanOrEqual,
+            toItem: self.leftContainerView, attribute: .right,
             offset: Style.Size.Padding
         )
         self.constrain(
-            self.titleLabel, attribute: .Right,
-            relatedBy: .LessThanOrEqual,
-            toItem: self.rightContainerView, attribute: .Left,
+            item: self.titleLabel, attribute: .right,
+            relatedBy: .lessThanOrEqual,
+            toItem: self.rightContainerView, attribute: .left,
             offset: -Style.Size.Padding
         )
     }

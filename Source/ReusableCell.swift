@@ -23,8 +23,8 @@ public class CollectionViewCell: UICollectionViewCell {
 public class CollectionView: UICollectionView {
 
     // Register a class, uses the reuse identifier from `reuseIdentifier()`
-    public func registerClass(cellClass: CollectionViewCell.Type) {
-        self.registerClass(cellClass, forCellWithReuseIdentifier: cellClass.reuseIdentifier())
+    public func register(classType: CollectionViewCell.Type) {
+        self.register(classType, forCellWithReuseIdentifier: classType.reuseIdentifier())
     }
 
 }
@@ -46,8 +46,8 @@ public class TableViewCell: UITableViewCell {
 public class TableView: UITableView {
 
     // Register a class, uses the reuse identifier from `reuseIdentifier()`
-    public func registerClass(cellClass: TableViewCell.Type) {
-        self.registerClass(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier())
+    public func register(classType: TableViewCell.Type) {
+        self.register(classType, forCellReuseIdentifier: classType.reuseIdentifier())
     }
     
 }
