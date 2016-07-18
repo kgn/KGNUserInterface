@@ -20,18 +20,18 @@ extension UIViewController {
      - parameter toView: Optional view to add the given view controller's view to as a subview.
      - parameter belowSubview: Optional view to insert the given view controller's view below.
      */
-    public func addSubViewController(viewController: UIViewController, toView: UIView? = nil, belowSubview: UIView? = nil) {
+    public func addSubViewController(_ viewController: UIViewController, toView: UIView? = nil, belowSubview: UIView? = nil) {
         self.addChildViewController(viewController)
         var parentView = self.view
         if let view = toView {
             parentView = view
         }
         if let subview = belowSubview {
-            parentView.insertSubview(viewController.view, belowSubview: subview)
+            parentView?.insertSubview(viewController.view, belowSubview: subview)
         } else {
-            parentView.addSubview(viewController.view)
+            parentView?.addSubview(viewController.view)
         }
-        viewController.didMoveToParentViewController(self)
+        viewController.didMove(toParentViewController: self)
         viewController.view.pinToEdgesOfSuperview()
     }
 

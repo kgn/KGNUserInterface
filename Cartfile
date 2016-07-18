@@ -1,6 +1,6 @@
-github "kgn/KGNColor"
-github "kgn/KGNAutoLayout"
-github "kgn/KGNGradientView"
-github "kgn/KGNPreferredFontManager"
+github "kgn/KGNColor" "swift3"
+github "kgn/KGNAutoLayout" "swift3"
+github "kgn/KGNGradientView" "swift3"
+github "kgn/KGNPreferredFontManager" "swift3"
 
-github "kevinlawler/NSDate-TimeAgo"
+github "kgn/NSDate-TimeAgo" "swift3"

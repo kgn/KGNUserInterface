@@ -38,7 +38,7 @@ extension UIView {
         }
 
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, opaque, scale)
-        if !self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: afterScreenUpdates) {
+        if !self.drawHierarchy(in: self.bounds, afterScreenUpdates: afterScreenUpdates) {
             return nil
         }
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
