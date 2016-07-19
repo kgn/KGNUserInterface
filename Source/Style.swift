@@ -16,15 +16,15 @@ public let π = CGFloat(M_PI)
 
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
-    dateFormatter.timeStyle = .noStyle
-    dateFormatter.dateStyle = .longStyle
+    dateFormatter.timeStyle = .none
+    dateFormatter.dateStyle = .long
     return dateFormatter
 }()
 
 private let timeFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
-    dateFormatter.timeStyle = .shortStyle
-    dateFormatter.dateStyle = .noStyle
+    dateFormatter.timeStyle = .short
+    dateFormatter.dateStyle = .none
     return dateFormatter
 }()
 

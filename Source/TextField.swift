@@ -146,7 +146,7 @@ public class TextField: PreferredFontTextField {
         self.autoCompleteLabel.centerVerticallyInSuperview()
         self.autoCompleteLabelConstraint = self.autoCompleteLabel.pinToLeftEdgeOfSuperview()
 
-        NotificationCenter.default().addObserver(
+        NotificationCenter.default.addObserver(
             self, selector: .textDidChange,
             name: .UITextFieldTextDidChange,
             object: self
@@ -154,7 +154,7 @@ public class TextField: PreferredFontTextField {
     }
 
     deinit {
-        NotificationCenter.default().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     @objc private func textDidChange() {
