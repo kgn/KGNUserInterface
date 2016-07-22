@@ -165,7 +165,7 @@ public class TextField: PreferredFontTextField {
         self.placeholderLabel.isHidden = self.text?.isEmpty == false
 
         if let autoCompleteValue = self.autoCompleteValue {
-            if let text = self.text, font = self.font {
+            if let text = self.text, let font = self.font {
                 let textLength = (text as NSString).boundingRect(
                     with: self.bounds.size, options: [],
                     attributes: [NSFontAttributeName: font], context: nil
@@ -184,10 +184,10 @@ public class TextField: PreferredFontTextField {
     }
 
     internal func autoCompleteMatch() -> String? {
-        guard let autoCompleteValues = self.autoCompleteValues where autoCompleteValues.count > 0 else {
+        guard let autoCompleteValues = self.autoCompleteValues, autoCompleteValues.count > 0 else {
             return nil
         }
-        guard let text = self.text where !text.isEmpty else {
+        guard let text = self.text, !text.isEmpty else {
             return nil
         }
 
