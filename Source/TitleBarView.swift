@@ -141,14 +141,14 @@ public class TitleBarView: UIView {
         self.titleLabel.centerInSuperview()
         self.constrain(
             item: self.titleLabel, attribute: .left,
-            relatedBy: .greaterThanOrEqual,
-            toItem: self.leftContainerView, attribute: .right,
+            toItem: self.leftContainerView,
+            attribute: .right, relatedBy: .greaterThanOrEqual,
             offset: Style.Size.Padding
         )
         self.constrain(
             item: self.titleLabel, attribute: .right,
-            relatedBy: .lessThanOrEqual,
-            toItem: self.rightContainerView, attribute: .left,
+            toItem: self.rightContainerView,
+            attribute: .left, relatedBy: .lessThanOrEqual,
             offset: -Style.Size.Padding
         )
     }
