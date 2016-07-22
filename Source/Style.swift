@@ -132,9 +132,6 @@ public struct Style {
         // The native screen height in pixels
         public static let NativeScreenHeight = UIScreen.main().nativeBounds.height/UIScreen.main().nativeScale
 
-        // The height of the status bar in points
-        public static let StatusBarHeight = UIApplication.shared().statusBarFrame.height
-
         // The maximum width or height of an Instagram photo in pixels
         public static let MaxInstagramSize: CGFloat = 1080
     }
