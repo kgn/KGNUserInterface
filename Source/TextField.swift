@@ -122,8 +122,8 @@ public class TextField: PreferredFontTextField {
         return label
     }()
 
-    override public func intrinsicContentSize() -> CGSize {
-        var intrinsicContentSize = super.intrinsicContentSize()
+    override public var intrinsicContentSize: CGSize {
+        var intrinsicContentSize = super.intrinsicContentSize
         if let intrinsicWidth = self.intrinsicWidth {
             intrinsicContentSize.width = intrinsicWidth
         }

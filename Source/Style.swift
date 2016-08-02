@@ -47,10 +47,10 @@ public struct Style {
     public struct Color {
 
         /// Pure white color
-        public static let White = UIColor.white()
+        public static let White = UIColor.white
 
         /// Pure black color
-        public static let Black = UIColor.black()
+        public static let Black = UIColor.black
 
         /// Clear white color with 0 alpha
         public static let ClearWhite = White.withAlphaComponent(0)
@@ -78,7 +78,7 @@ public struct Style {
     public struct Size {
 
         /// The scale of the main screen
-        public static let ScreenScale: CGFloat = UIScreen.main().scale
+        public static let ScreenScale: CGFloat = UIScreen.main.scale
 
         /// One point
         public static let OnePoint: CGFloat = 1
@@ -127,10 +127,10 @@ public struct Style {
         public static let iPhone6PlusWidth: CGFloat = 414
 
         // The native screen width in pixels
-        public static let NativeScreenWidth = UIScreen.main().nativeBounds.width/UIScreen.main().nativeScale
+        public static let NativeScreenWidth = UIScreen.main.nativeBounds.width/UIScreen.main.nativeScale
 
         // The native screen height in pixels
-        public static let NativeScreenHeight = UIScreen.main().nativeBounds.height/UIScreen.main().nativeScale
+        public static let NativeScreenHeight = UIScreen.main.nativeBounds.height/UIScreen.main.nativeScale
 
         // The maximum width or height of an Instagram photo in pixels
         public static let MaxInstagramSize: CGFloat = 1080
@@ -246,14 +246,11 @@ public struct Style {
 
          - returns: A formatted string for the date.
          */
-        public static func Date(from date: Foundation.Date, includeTime: Bool = false, calanderIdentifier: String = Calendar.Identifier.gregorian.rawValue) -> String? {
+        public static func Date(from date: Foundation.Date, includeTime: Bool = false, calanderIdentifier: Calendar.Identifier = .gregorian) -> String? {
             var dateString = date.timeAgo
 
-            guard let calander = Calendar(identifier: Calendar.Identifier(rawValue: calanderIdentifier)) else {
-                return nil
-            }
-
-            let components = calander.components([.month, .year], from: date, to: Foundation.Date(), options: [])
+            let calander = Calendar(identifier: calanderIdentifier)
+            let components = calander.dateComponents([.month, .year], from: date, to: Foundation.Date())
             if components.year >= 1 || components.month > 1 {
                 dateString = dateFormatter.string(from: date)
             }

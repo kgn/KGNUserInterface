@@ -27,8 +27,8 @@ public class Label: PreferredFontLabel {
         self.textColor = Label.appearance().textColor
     }
 
-    override public func intrinsicContentSize() -> CGSize {
-        var intrinsicContentSize = super.intrinsicContentSize()
+    override public var intrinsicContentSize: CGSize {
+        var intrinsicContentSize = super.intrinsicContentSize
         if let intrinsicWidth = self.intrinsicWidth {
             intrinsicContentSize.width = intrinsicWidth
         }

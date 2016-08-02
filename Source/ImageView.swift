@@ -18,8 +18,8 @@ public class ImageView: UIImageView {
     /// `UIViewNoIntrinsicMetric` can also be used used.
     public var intrinsicHeight: CGFloat?
 
-    override public func intrinsicContentSize() -> CGSize {
-        var intrinsicContentSize = super.intrinsicContentSize()
+    override public var intrinsicContentSize: CGSize {
+        var intrinsicContentSize = super.intrinsicContentSize
         if let intrinsicWidth = self.intrinsicWidth {
             intrinsicContentSize.width = intrinsicWidth
         }

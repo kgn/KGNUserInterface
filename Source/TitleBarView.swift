@@ -9,12 +9,12 @@
 import UIKit
 
 private class ContentView: UIView {
-    override private func intrinsicContentSize() -> CGSize {
+    override private var intrinsicContentSize: CGSize {
         let minWidth = Style.Size.Control
-        var intrinsicContentSize = super.intrinsicContentSize()
+        var intrinsicContentSize = super.intrinsicContentSize
 
         if let subview = self.subviews.first {
-            let subviewIntrinsicContentSize = subview.intrinsicContentSize()
+            let subviewIntrinsicContentSize = subview.intrinsicContentSize
             intrinsicContentSize.width = subviewIntrinsicContentSize.width
             if intrinsicContentSize.width < minWidth {
                 intrinsicContentSize.width = minWidth
@@ -102,7 +102,7 @@ public class TitleBarView: UIView {
         }
     }
 
-    override public func intrinsicContentSize() -> CGSize {
+    override public var intrinsicContentSize: CGSize {
         if self.traitCollection.userInterfaceIdiom == .phone {
             if self.traitCollection.verticalSizeClass == .compact {
                 return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeightCompact)
