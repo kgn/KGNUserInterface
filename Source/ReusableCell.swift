@@ -9,21 +9,21 @@
 // MARK: - Collection View
 
 /// Subclass of a collection view cell with helpful methods
-public class CollectionViewCell: UICollectionViewCell {
+open class CollectionViewCell: UICollectionViewCell {
 
     // Public method that returns a string of 
     // the class to be used as a reuseIdentifier.
-    public class func reuseIdentifier() -> String {
+    open class func reuseIdentifier() -> String {
         return "\(self)"
     }
 
 }
 
 /// Subclass of a collection view with helpful methods
-public class CollectionView: UICollectionView {
+open class CollectionView: UICollectionView {
 
     // Register a class, uses the reuse identifier from `reuseIdentifier()`
-    public func register(classType: CollectionViewCell.Type) {
+    open func register(classType: CollectionViewCell.Type) {
         self.register(classType, forCellWithReuseIdentifier: classType.reuseIdentifier())
     }
 
@@ -32,21 +32,21 @@ public class CollectionView: UICollectionView {
 // MARK: - Table View
 
 /// Subclass of a table view cell with helpful methods
-public class TableViewCell: UITableViewCell {
+open class TableViewCell: UITableViewCell {
 
     // Public method that returns a string of
     // the class to be used as a reuseIdentifier.
-    public class func reuseIdentifier() -> String {
+    open class func reuseIdentifier() -> String {
         return "\(self)"
     }
     
 }
 
 /// Subclass of a table view with helpful methods
-public class TableView: UITableView {
+open class TableView: UITableView {
 
     // Register a class, uses the reuse identifier from `reuseIdentifier()`
-    public func register(classType: TableViewCell.Type) {
+    open func register(classType: TableViewCell.Type) {
         self.register(classType, forCellReuseIdentifier: classType.reuseIdentifier())
     }
     

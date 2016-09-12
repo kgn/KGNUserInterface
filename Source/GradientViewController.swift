@@ -10,10 +10,10 @@ import UIKit
 
 /// A subclass of `UIViewController` but with `self.view`
 /// set ot a `VerticalGradientView` view object
-public class GradientViewController: UIViewController {
+open class GradientViewController: UIViewController {
 
     /// The gradient to display
-    public var gradient: Gradient! {
+    open var gradient: Gradient! {
         didSet {
             if self.gradient != nil {
                 let view = self.view as! VerticalGradientView
@@ -22,7 +22,7 @@ public class GradientViewController: UIViewController {
         }
     }
 
-    override public func loadView() {
+    open override func loadView() {
         self.view = VerticalGradientView()
     }
 
