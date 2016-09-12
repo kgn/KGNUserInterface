@@ -10,18 +10,18 @@ import UIKit
 import KGNPreferredFontManager
 
 /// Subclass of `PreferredFontButton`.
-public class Button: PreferredFontButton {
+open class Button: PreferredFontButton {
 
     /// The intrinsic width, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    public var intrinsicWidth: CGFloat?
+    open var intrinsicWidth: CGFloat?
 
     /// The intrinsic height, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    public var intrinsicHeight: CGFloat?
+    open var intrinsicHeight: CGFloat?
 
     /// Helper property that sets the button title for the `Normal` state
-    public var title: String? {
+    open var title: String? {
         get {
             return self.title(for: [])
         }
@@ -32,7 +32,7 @@ public class Button: PreferredFontButton {
     }
 
     /// Helper property that sets the button image for the `Normal` state
-    public var image: UIImage? {
+    open var image: UIImage? {
         get {
             return self.image(for: [])
         }
@@ -53,7 +53,7 @@ public class Button: PreferredFontButton {
 
      - returns: The button object.
      */
-    public class func systemButton(withTitle title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
+    open class func systemButton(withTitle title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
         let button = self.init(type: .system)
         button.title = title
         button.addTarget(target, action: action, for: events)
@@ -71,18 +71,18 @@ public class Button: PreferredFontButton {
 
      - returns: The button object.
      */
-    public class func systemButton(imageNamed: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
+    open class func systemButton(imageNamed name: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
         let button = self.init(type: .system)
-        button.image = UIImage(named: imageNamed)
+        button.image = UIImage(named: name)
         button.addTarget(target, action: action, for: events)
         return button
     }
 
-    override public func setup() {
+    open override func setup() {
         super.setup()
     }
 
-    override public var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         var intrinsicContentSize = super.intrinsicContentSize
         if let intrinsicWidth = self.intrinsicWidth {
             intrinsicContentSize.width = intrinsicWidth

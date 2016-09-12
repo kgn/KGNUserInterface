@@ -16,32 +16,32 @@ private extension Selector {
 /// Subclass of `PreferredFontTextField`. This implementation also allows
 /// the text color to be set by `Label.appearance().textColor` and adds
 /// a property for setting the color of the placeholder text.
-public class TextField: PreferredFontTextField {
+open class TextField: PreferredFontTextField {
 
     /// The intrinsic width, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    public var intrinsicWidth: CGFloat?
+    open var intrinsicWidth: CGFloat?
 
     /// The intrinsic height, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    public var intrinsicHeight: CGFloat?
+    open var intrinsicHeight: CGFloat?
 
     /// Suffix values to use for auto complete
     /// Useful for auto completing email addresses and other common text inputs
-    public var autoCompleteValues: [String]?
+    open var autoCompleteValues: [String]?
 
     /// Determins if the auto complete match should ignore case
     /// Defaults to `true`
-    public var autoCompleteIgnoreCase = true
+    open var autoCompleteIgnoreCase = true
 
     /// The current auto complete value
-    public var autoCompleteValue: String? {
+    open var autoCompleteValue: String? {
         get {
             return self.autoCompleteMatch()
         }
     }
 
-    override public var text: String? {
+    open override var text: String? {
         get {
             return super.text
         }
@@ -52,7 +52,7 @@ public class TextField: PreferredFontTextField {
         }
     }
 
-    override public var font: UIFont? {
+    open override var font: UIFont? {
         get {
             return super.font
         }
@@ -63,14 +63,14 @@ public class TextField: PreferredFontTextField {
         }
     }
 
-    override public var textStyle: String {
+    open override var textStyle: UIFontTextStyle {
         didSet {
             self.placeholderLabel.textStyle = self.textStyle
             self.autoCompleteLabel.textStyle = self.textStyle
         }
     }
 
-    override public var preferredFontManager: PreferredFontManager? {
+    open override var preferredFontManager: PreferredFontManager? {
         didSet {
             self.placeholderLabel.preferredFontManager = self.preferredFontManager
             self.autoCompleteLabel.preferredFontManager = self.preferredFontManager
@@ -83,7 +83,7 @@ public class TextField: PreferredFontTextField {
         }
     }
 
-    override public var placeholder: String? {
+    open override var placeholder: String? {
         get {
             return self.privatePlaceholder
         }
@@ -122,7 +122,7 @@ public class TextField: PreferredFontTextField {
         return label
     }()
 
-    override public var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         var intrinsicContentSize = super.intrinsicContentSize
         if let intrinsicWidth = self.intrinsicWidth {
             intrinsicContentSize.width = intrinsicWidth
@@ -133,7 +133,7 @@ public class TextField: PreferredFontTextField {
         return intrinsicContentSize
     }
 
-    override public func setup() {
+    open override func setup() {
         super.setup()
 
         self.textColor = TextField.appearance().textColor
@@ -157,7 +157,7 @@ public class TextField: PreferredFontTextField {
         NotificationCenter.default.removeObserver(self)
     }
 
-    @objc private func textDidChange() {
+    @objc fileprivate func textDidChange() {
         self.updatePlaceholderAndAutoComplete()
     }
 

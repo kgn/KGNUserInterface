@@ -9,7 +9,7 @@
 import UIKit
 
 private class ContentView: UIView {
-    override private var intrinsicContentSize: CGSize {
+    override var intrinsicContentSize: CGSize {
         let minWidth = Style.Size.Control
         var intrinsicContentSize = super.intrinsicContentSize
 
@@ -29,17 +29,17 @@ private class ContentView: UIView {
 
 /// Custom title bar view, similar to UINavigationBar
 /// but intended for custom interfaces.
-public class TitleBarView: UIView {
+open class TitleBarView: UIView {
 
     /// The title to display in the center of the bar
-    public var title: String? {
+    open var title: String? {
         didSet {
             self.titleLabel.text = self.title
         }
     }
 
     /// The left view item
-    public var leftView: UIView? {
+    open var leftView: UIView? {
         didSet {
             for subview in self.leftContainerView.subviews {
                 subview.removeFromSuperview()
@@ -53,7 +53,7 @@ public class TitleBarView: UIView {
     }
 
     /// The right view item
-    public var rightView: UIView? {
+    open var rightView: UIView? {
         didSet {
             for subview in self.rightContainerView.subviews {
                 subview.removeFromSuperview()
@@ -67,7 +67,7 @@ public class TitleBarView: UIView {
     }
 
     private lazy var titleLabel: Label = {
-        let label = Label(textStyle: UIFontTextStyleSubheadline)
+        let label = Label(textStyle: .subheadline)
         label.accessibilityTraits = UIAccessibilityTraitHeader
         return label
     }()
@@ -76,7 +76,7 @@ public class TitleBarView: UIView {
     private lazy var rightContainerView: ContentView = ContentView()
 
     /// Set the title, if `animated` is `true` then a cross dissolve animation is used.
-    public func set(title: String?, animated: Bool) {
+    open func set(title: String?, animated: Bool) {
         defer {
             self.title = title
         }
@@ -102,7 +102,7 @@ public class TitleBarView: UIView {
         }
     }
 
-    override public var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         if self.traitCollection.userInterfaceIdiom == .phone {
             if self.traitCollection.verticalSizeClass == .compact {
                 return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeightCompact)
@@ -111,7 +111,7 @@ public class TitleBarView: UIView {
         return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeight)
     }
 
-    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         self.invalidateIntrinsicContentSize()
     }

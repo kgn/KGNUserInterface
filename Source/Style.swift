@@ -197,10 +197,10 @@ public struct Style {
         public static func Pop(view: UIView, duration: TimeInterval = ShortDuration, scale: CGFloat = 1.5, completionBlock: (() -> Void)? = nil) {
             UIView.animate(withDuration: duration*0.5, delay: 0, options: .beginFromCurrentState, animations: {
                 view.layer.transform = CATransform3DMakeScale(scale, scale, scale)
-                }) { _ in
-                    UIView.animate(withDuration: duration) {
-                        view.layer.transform = CATransform3DIdentity
-                    }
+            }) { _ in
+                UIView.animate(withDuration: duration) {
+                    view.layer.transform = CATransform3DIdentity
+                }
             }
         }
     }
@@ -251,7 +251,7 @@ public struct Style {
 
             let calander = Calendar(identifier: calanderIdentifier)
             let components = calander.dateComponents([.month, .year], from: date, to: Foundation.Date())
-            if components.year >= 1 || components.month > 1 {
+            if components.year! >= 1 || components.month! > 1 {
                 dateString = dateFormatter.string(from: date)
             }
 
@@ -271,12 +271,11 @@ public struct Style {
 
          - returns: A formatted currency string for the number.
          */
-        public static func Currency(from number: Double) -> String? {
-            let format = currencyFormatter.string(from: number)
+        public static func Currency<F: FloatingPoint>(from number: F) -> String? {
+            let format = currencyFormatter.string(from: NSNumber(floatLiteral: number as! Double))
             if format?.hasSuffix(".00") == true { // TODO: localize '.'
                 return format?.replacingOccurrences(of: ".00", with: "")
             }
-
             return format
         }
 
@@ -288,8 +287,8 @@ public struct Style {
 
          - returns: A formatted percentage string for the number.
          */
-        public static func Percentage(from number: Double) -> String? {
-            let format = NSString(format: "%.2f", number)
+        public static func Percentage<F: FloatingPoint>(from number: F) -> String? {
+            let format = NSString(format: "%.2f", number as! Double)
             if format.hasSuffix(".00") == true { // TODO: localize '.'
                 return format.replacingOccurrences(of: ".00", with: "")
             }
@@ -303,8 +302,8 @@ public struct Style {
          
          - returns: A formatted string for the number.
          */
-        public static func Number(from number: Int) -> String? {
-            return numberFormatter.string(from: number)
+        public static func Number<I: Integer>(from number: I) -> String? {
+            return numberFormatter.string(from: NSNumber(integerLiteral: number as! Int))
         }
         
     }

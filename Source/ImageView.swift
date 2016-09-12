@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class ImageView: UIImageView {
+open class ImageView: UIImageView {
 
     /// The intrinsic width, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    public var intrinsicWidth: CGFloat?
+    open var intrinsicWidth: CGFloat?
 
     /// The intrinsic height, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    public var intrinsicHeight: CGFloat?
+    open var intrinsicHeight: CGFloat?
 
-    override public var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         var intrinsicContentSize = super.intrinsicContentSize
         if let intrinsicWidth = self.intrinsicWidth {
             intrinsicContentSize.width = intrinsicWidth
