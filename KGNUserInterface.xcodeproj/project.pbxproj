@@ -94,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6460BC7F1D872ECF001B8720 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		833C2C201BE3179B0042C628 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KGNUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGNUserInterface.h; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		836E698D1BCCD3B30089EAB1 = {
 			isa = PBXGroup;
 			children = (
+				6460BC7F1D872ECF001B8720 /* .travis.yml */,
 				83DC542B1C4C7DBD00CF23A9 /* Example */,
 				836E69991BCCD3B40089EAB1 /* Source */,
 				836E69A51BCCD3B40089EAB1 /* Tests */,
