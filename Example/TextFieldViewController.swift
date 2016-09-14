@@ -18,9 +18,9 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
-        textField.textColor = UIColor.black()
-        textField.placeholderColor = UIColor.gray()
-        textField.autoCompleteColor = UIColor.blue()
+        textField.textColor = UIColor.black
+        textField.placeholderColor = UIColor.gray
+        textField.autoCompleteColor = UIColor.blue
         textField.autoCompleteValues = [
             "@aol.com",
             "@me.com",
@@ -35,9 +35,9 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         let textField = TextField()
         textField.delegate = self
         textField.placeholder = "Name"
-        textField.textColor = UIColor.black()
-        textField.placeholderColor = UIColor.gray()
-        textField.autoCompleteColor = UIColor.blue()
+        textField.textColor = UIColor.black
+        textField.placeholderColor = UIColor.gray
+        textField.autoCompleteColor = UIColor.blue
         textField.autoCompleteValues = [
             "Frank Sinatra",
             "Dean Martin",
@@ -53,7 +53,7 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.white()
+        self.view.backgroundColor = UIColor.white
 
         self.view.addSubview(self.nameTextField)
         self.nameTextField.positionBelow(item: self.topLayoutGuide, offset: Style.Size.LargePadding)
