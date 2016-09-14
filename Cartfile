@@ -3,4 +3,4 @@ github "kgn/KGNAutoLayout"
 github "kgn/KGNGradientView"
 github "kgn/KGNPreferredFontManager"
 
-github "kgn/NSDate-TimeAgo" "swift3"
+github "kgn/NSDate-TimeAgo"
