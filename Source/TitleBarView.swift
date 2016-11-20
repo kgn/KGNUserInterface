@@ -130,12 +130,12 @@ open class TitleBarView: UIView {
         self.addSubview(self.leftContainerView)
         self.leftContainerView.size(toMaxWidth: Style.Size.TitleBarItemMaxWidth)
         self.leftContainerView.pinToTopAndBottomEdgesOfSuperview()
-        self.leftContainerView.pinToLeftEdgeOfSuperview(offset: Style.Size.SmallPadding)
+        self.leftContainerView.pinToLeftEdgeOfSuperview(withOffset: Style.Size.SmallPadding)
 
         self.addSubview(self.rightContainerView)
         self.rightContainerView.size(toMaxWidth: Style.Size.TitleBarItemMaxWidth)
         self.rightContainerView.pinToTopAndBottomEdgesOfSuperview()
-        self.rightContainerView.pinToRightEdgeOfSuperview(offset: Style.Size.SmallPadding)
+        self.rightContainerView.pinToRightEdgeOfSuperview(withOffset: Style.Size.SmallPadding)
 
         self.addSubview(self.titleLabel)
         self.titleLabel.centerInSuperview()

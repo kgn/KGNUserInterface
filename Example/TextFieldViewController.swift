@@ -18,9 +18,9 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
-        textField.textColor = UIColor.black
-        textField.placeholderColor = UIColor.gray
-        textField.autoCompleteColor = UIColor.blue
+        textField.textColor = .black
+        textField.placeholderColor = .gray
+        textField.autoCompleteColor = .blue
         textField.autoCompleteValues = [
             "@aol.com",
             "@me.com",
@@ -35,9 +35,9 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         let textField = TextField()
         textField.delegate = self
         textField.placeholder = "Name"
-        textField.textColor = UIColor.black
-        textField.placeholderColor = UIColor.gray
-        textField.autoCompleteColor = UIColor.blue
+        textField.textColor = .black
+        textField.placeholderColor = .gray
+        textField.autoCompleteColor = .blue
         textField.autoCompleteValues = [
             "Frank Sinatra",
             "Dean Martin",
@@ -53,15 +53,15 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = .white
 
         self.view.addSubview(self.nameTextField)
-        self.nameTextField.positionBelow(item: self.topLayoutGuide, offset: Style.Size.LargePadding)
-        self.nameTextField.pinToSideEdgesOfSuperview(offset: Style.Size.Padding)
+        self.nameTextField.positionBelow(self.topLayoutGuide as! LayoutItem, withOffset: Style.Size.LargePadding)
+        self.nameTextField.pinToSideEdgesOfSuperview(withOffset: Style.Size.Padding)
 
         self.view.addSubview(self.emailTextField)
-        self.emailTextField.positionBelow(item: self.nameTextField, offset: Style.Size.LargePadding)
-        self.emailTextField.pinToSideEdgesOfSuperview(offset: Style.Size.Padding)
+        self.emailTextField.positionBelow(self.nameTextField, withOffset: Style.Size.LargePadding)
+        self.emailTextField.pinToSideEdgesOfSuperview(withOffset: Style.Size.Padding)
     }
 
     override func viewDidAppear(_ animated: Bool) {
