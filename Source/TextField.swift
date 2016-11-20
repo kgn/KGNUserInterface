@@ -18,14 +18,6 @@ private extension Selector {
 /// a property for setting the color of the placeholder text.
 open class TextField: PreferredFontTextField {
 
-    /// The intrinsic width, if `nil` the super value is used,
-    /// `UIViewNoIntrinsicMetric` can also be used used.
-    open var intrinsicWidth: CGFloat?
-
-    /// The intrinsic height, if `nil` the super value is used,
-    /// `UIViewNoIntrinsicMetric` can also be used used.
-    open var intrinsicHeight: CGFloat?
-
     /// Suffix values to use for auto complete
     /// Useful for auto completing email addresses and other common text inputs
     open var autoCompleteValues: [String]?
@@ -121,17 +113,6 @@ open class TextField: PreferredFontTextField {
         label.text = self.placeholder
         return label
     }()
-
-    open override var intrinsicContentSize: CGSize {
-        var intrinsicContentSize = super.intrinsicContentSize
-        if let intrinsicWidth = self.intrinsicWidth {
-            intrinsicContentSize.width = intrinsicWidth
-        }
-        if let intrinsicHeight = self.intrinsicHeight {
-            intrinsicContentSize.height = intrinsicHeight
-        }
-        return intrinsicContentSize
-    }
 
     open override func setup() {
         super.setup()

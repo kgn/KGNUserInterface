@@ -12,13 +12,13 @@ import KGNPreferredFontManager
 /// Subclass of `PreferredFontButton`.
 open class Button: PreferredFontButton {
 
-    /// The intrinsic width, if `nil` the super value is used,
+    /// The intrinsic content width, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    open var intrinsicWidth: CGFloat?
-
-    /// The intrinsic height, if `nil` the super value is used,
+    open var intrinsicContentWidth: CGFloat?
+    
+    /// The intrinsic content height, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    open var intrinsicHeight: CGFloat?
+    open var intrinsicContentHeight: CGFloat?
 
     /// Helper property that sets the button title for the `Normal` state
     open var title: String? {
@@ -81,14 +81,14 @@ open class Button: PreferredFontButton {
     open override func setup() {
         super.setup()
     }
-
+    
     open override var intrinsicContentSize: CGSize {
         var intrinsicContentSize = super.intrinsicContentSize
-        if let intrinsicWidth = self.intrinsicWidth {
-            intrinsicContentSize.width = intrinsicWidth
+        if let width = self.intrinsicContentWidth {
+            intrinsicContentSize.width = width
         }
-        if let intrinsicHeight = self.intrinsicHeight {
-            intrinsicContentSize.height = intrinsicHeight
+        if let height = self.intrinsicContentHeight {
+            intrinsicContentSize.height = height
         }
         return intrinsicContentSize
     }
