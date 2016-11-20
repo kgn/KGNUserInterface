@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64AE57101DE1796F00078032 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AE570F1DE1796F00078032 /* View.swift */; };
 		833C2C211BE3179B0042C628 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C2C201BE3179B0042C628 /* TextField.swift */; };
 		833C2C221BE31C040042C628 /* KGNAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */; };
 		833C2C231BE31C040042C628 /* KGNColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D191BDDC30D001C01CF /* KGNColor.framework */; };
@@ -95,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		6460BC7F1D872ECF001B8720 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		64AE570F1DE1796F00078032 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		833C2C201BE3179B0042C628 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		836E69971BCCD3B40089EAB1 /* KGNUserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KGNUserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		836E699A1BCCD3B40089EAB1 /* KGNUserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGNUserInterface.h; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		83BB081E1BE7A62800D4173B /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				64AE570F1DE1796F00078032 /* View.swift */,
 				83BB08191BE7A38500D4173B /* TitleBarView.swift */,
 				83C5DF7B1BF5CA9E00A97524 /* ImageView.swift */,
 				83C9C8831C5B4DE000E416D7 /* ReusableCell.swift */,
@@ -439,6 +442,7 @@
 				8399B23A1BEE49F200C9E1B3 /* UIView+Snapshot.swift in Sources */,
 				833C2C211BE3179B0042C628 /* TextField.swift in Sources */,
 				83E06D111BDDC0E8001C01CF /* UIViewController+Extension.swift in Sources */,
+				64AE57101DE1796F00078032 /* View.swift in Sources */,
 				83BB081B1BE7A38500D4173B /* TitleBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
