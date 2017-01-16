@@ -17,6 +17,27 @@ private extension Selector {
 /// the text color to be set by `Label.appearance().textColor` and adds
 /// a property for setting the color of the placeholder text.
 open class TextField: PreferredFontTextField {
+    
+    /// The intrinsic content width, if `nil` the super value is used,
+    /// `UIViewNoIntrinsicMetric` can also be used used.
+    open var intrinsicContentWidth: CGFloat?
+    
+    /// The intrinsic content height, if `nil` the super value is used,
+    /// `UIViewNoIntrinsicMetric` can also be used used.
+    open var intrinsicContentHeight: CGFloat?
+    
+    open override var intrinsicContentSize: CGSize {
+        // HACK: the wh > 0 check shouldn't be necessary,
+        // but the values are not nil for some reason...
+        var intrinsicContentSize = super.intrinsicContentSize
+        if let width = self.intrinsicContentWidth, width > 0 {
+            intrinsicContentSize.width = width
+        }
+        if let height = self.intrinsicContentHeight, height > 0{
+            intrinsicContentSize.height = height
+        }
+        return intrinsicContentSize
+    }
 
     /// Suffix values to use for auto complete
     /// Useful for auto completing email addresses and other common text inputs
