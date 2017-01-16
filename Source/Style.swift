@@ -11,9 +11,6 @@ import KGNColor
 import NSDateTimeAgo
 import KGNGradientView
 
-/// CGFloat value for Pi
-public let π = CGFloat(M_PI)
-
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.timeStyle = .none
@@ -82,9 +79,6 @@ public struct Style {
 
         /// One point
         public static let OnePoint: CGFloat = 1
-
-        /// Half of a point
-        public static let HalfPoint: CGFloat = OnePoint/2
 
         /// One pixel
         public static let OnePixel: CGFloat = OnePoint/ScreenScale
