@@ -12,21 +12,17 @@ open class ImageView: UIImageView {
 
     /// The intrinsic width, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    open var intrinsicWidth: CGFloat?
+    open var intrinsicContentWidth: CGFloat?
 
     /// The intrinsic height, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
-    open var intrinsicHeight: CGFloat?
+    open var intrinsicContentHeight: CGFloat?
 
     open override var intrinsicContentSize: CGSize {
-        var intrinsicContentSize = super.intrinsicContentSize
-        if let intrinsicWidth = self.intrinsicWidth {
-            intrinsicContentSize.width = intrinsicWidth
-        }
-        if let intrinsicHeight = self.intrinsicHeight {
-            intrinsicContentSize.height = intrinsicHeight
-        }
-        return intrinsicContentSize
+        return CGSize(
+            width: self.intrinsicContentWidth ?? super.intrinsicContentSize.width,
+            height: self.intrinsicContentHeight ?? super.intrinsicContentSize.height
+        )
     }
 }
 
