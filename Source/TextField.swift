@@ -170,11 +170,10 @@ open class TextField: PreferredFontTextField {
             if let text = self.text, let font = self.font {
                 let textLength = (text as NSString).boundingRect(
                     with: self.bounds.size, options: [],
-                    attributes: [NSFontAttributeName: font], context: nil
+                    attributes: [.font: font], context: nil
                 )
                 self.autoCompleteLabelConstraint.constant = textLength.width
-                let startIndex = autoCompleteValue.characters.index(autoCompleteValue.startIndex, offsetBy: text.characters.count)
-                self.autoCompleteLabel.text = autoCompleteValue.substring(from: startIndex)
+                self.autoCompleteLabel.text = String(autoCompleteValue.suffix(autoCompleteValue.count-text.count))
             } else {
                 self.autoCompleteLabelConstraint.constant = 0
                 self.autoCompleteLabel.text = autoCompleteValue
@@ -249,8 +248,7 @@ open class TextField: PreferredFontTextField {
             // Return the full text with the complete suffix,
             // this cuases the function to early exit when the
             // first match is found
-            let index = suffix.characters.index(suffix.startIndex, offsetBy: length)
-            return text+suffix.substring(from: index)
+            return text+String(suffix.suffix(suffix.count-length))
             
         }
 

@@ -296,8 +296,8 @@ public struct Style {
          
          - returns: A formatted string for the number.
          */
-        public static func Number<I: Integer>(from number: I) -> String? {
-            return numberFormatter.string(from: NSNumber(integerLiteral: number as! Int))
+        public static func Number(from number: Int) -> String? {
+            return numberFormatter.string(from: NSNumber(integerLiteral: number))
         }
         
     }
