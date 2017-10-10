@@ -39,7 +39,7 @@
 		83DC54431C4C7EA300CF23A9 /* NSDateTimeAgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D1C1BDDC30E001C01CF /* NSDateTimeAgo.framework */; };
 		83E06D111BDDC0E8001C01CF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */; };
 		83E06D131BDDC151001C01CF /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D121BDDC151001C01CF /* Style.swift */; };
-		83E06D161BDDC1F7001C01CF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D141BDDC1F7001C01CF /* Button.swift */; };
+		83E06D161BDDC1F7001C01CF /* KGNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D141BDDC1F7001C01CF /* KGNButton.swift */; };
 		83E06D171BDDC1F7001C01CF /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E06D151BDDC1F7001C01CF /* Label.swift */; };
 		83E06D1D1BDDC30E001C01CF /* KGNAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */; };
 		83E06D1E1BDDC30E001C01CF /* KGNColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E06D191BDDC30D001C01CF /* KGNColor.framework */; };
@@ -116,7 +116,7 @@
 		83DC542A1C4C7DBC00CF23A9 /* KGNUserInterfaceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGNUserInterfaceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E06D0F1BDDC0E8001C01CF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		83E06D121BDDC151001C01CF /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		83E06D141BDDC1F7001C01CF /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		83E06D141BDDC1F7001C01CF /* KGNButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KGNButton.swift; sourceTree = "<group>"; };
 		83E06D151BDDC1F7001C01CF /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		83E06D181BDDC30D001C01CF /* KGNAutoLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KGNAutoLayout.framework; path = Carthage/Build/iOS/KGNAutoLayout.framework; sourceTree = "<group>"; };
 		83E06D191BDDC30D001C01CF /* KGNColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KGNColor.framework; path = Carthage/Build/iOS/KGNColor.framework; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				83E06D151BDDC1F7001C01CF /* Label.swift */,
-				83E06D141BDDC1F7001C01CF /* Button.swift */,
+				83E06D141BDDC1F7001C01CF /* KGNButton.swift */,
 				833C2C201BE3179B0042C628 /* TextField.swift */,
 			);
 			name = PreferredFontManager;
@@ -434,7 +434,7 @@
 			files = (
 				83C9C8841C5B4DE000E416D7 /* ReusableCell.swift in Sources */,
 				83E06D131BDDC151001C01CF /* Style.swift in Sources */,
-				83E06D161BDDC1F7001C01CF /* Button.swift in Sources */,
+				83E06D161BDDC1F7001C01CF /* KGNButton.swift in Sources */,
 				83BB081A1BE7A38500D4173B /* GradientViewController.swift in Sources */,
 				83C5DF7C1BF5CA9F00A97524 /* ImageView.swift in Sources */,
 				83E06D171BDDC1F7001C01CF /* Label.swift in Sources */,

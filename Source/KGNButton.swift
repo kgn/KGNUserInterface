@@ -10,7 +10,8 @@ import UIKit
 import KGNPreferredFontManager
 
 /// Subclass of `PreferredFontButton`.
-open class Button: PreferredFontButton {
+/// Note: named KGNButton to not conflict with other libraries named Button...
+open class KGNButton: PreferredFontButton {
 
     /// The intrinsic content width, if `nil` the super value is used,
     /// `UIViewNoIntrinsicMetric` can also be used used.
