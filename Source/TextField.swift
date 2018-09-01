@@ -204,14 +204,14 @@ open class TextField: PreferredFontTextField {
                 compareSuffix = suffix.lowercased()
             }
 
-            guard let firstSuffixCharacter = compareSuffix.characters.first else {
+            guard let firstSuffixCharacter = compareSuffix.first else {
                 continue
             }
 
             // Find the location of the first character from the suffix in the text,
             // if it exists...
             var textLocation: Int?
-            for (t, textCharacter) in compareText.characters.enumerated() {
+            for (t, textCharacter) in compareText.enumerated() {
                 if firstSuffixCharacter == textCharacter {
                     textLocation = t
                     break
@@ -224,24 +224,24 @@ open class TextField: PreferredFontTextField {
 
             // Find all the following matching characters
             var length = 1
-            var suffixArray = Array(compareSuffix.characters)
-            var textArray = Array(compareText.characters)
-
-            if length+location < textArray.count {
-                while suffixArray[length] == textArray[length+location] {
+            let compareSuffixCharacters = Array(compareSuffix.characters)
+            let compareTextCharacters = Array(compareText.characters)
+            
+            if length+location < compareText.count {
+                while compareTextCharacters[length] == compareTextCharacters[length+location] {
                     length += 1
 
-                    if length >= suffixArray.count {
+                    if length >= compareSuffix.count {
                         break
                     }
 
-                    if length+location >= textArray.count {
+                    if length+location >= compareText.count {
                         break
                     }
                 }
             }
             
-            if textArray.count > location+length {
+            if compareText.count > location+length {
                 continue
             }
             
