@@ -50,7 +50,7 @@ open class TextField: PreferredFontTextField {
     /// The current auto complete value
     open var autoCompleteValue: String? {
         get {
-            return self.autoCompleteMatch()
+            return self.autoCompleteMatch
         }
     }
 
@@ -184,7 +184,7 @@ open class TextField: PreferredFontTextField {
         }
     }
 
-    internal func autoCompleteMatch() -> String? {
+    internal var autoCompleteMatch: String? {
         guard let autoCompleteValues = self.autoCompleteValues, autoCompleteValues.count > 0 else {
             return nil
         }
@@ -224,11 +224,8 @@ open class TextField: PreferredFontTextField {
 
             // Find all the following matching characters
             var length = 1
-            let compareSuffixCharacters = Array(compareSuffix.characters)
-            let compareTextCharacters = Array(compareText.characters)
-            
             if length+location < compareText.count {
-                while compareTextCharacters[length] == compareTextCharacters[length+location] {
+                while self.character(in: compareSuffix, at: length) == self.character(in: compareText, at: length+location) {
                     length += 1
 
                     if length >= compareSuffix.count {
@@ -253,6 +250,10 @@ open class TextField: PreferredFontTextField {
         }
 
         return nil
+    }
+    
+    private func character(in string: String, at index: Int) -> Character {
+        return string[string.index(string.startIndex, offsetBy: index)]
     }
 
 }
