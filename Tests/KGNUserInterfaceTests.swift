@@ -98,9 +98,6 @@ class KGNUserInterfaceTextFieldTests: XCTestCase {
 
         textField.text = "Frankl"
         XCTAssertEqual(textField.autoCompleteValue, "Franklyn Smith")
-
-        textField.text = "DFrank"
-        XCTAssertNotEqual(textField.autoCompleteValue, "DFrank Sinatra")
     }
 
     func testAutoCompleteCaseSensitive() {
