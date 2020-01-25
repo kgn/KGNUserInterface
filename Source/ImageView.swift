@@ -37,7 +37,7 @@ extension UIImageView {
 
     - returns: The image view object.
     */
-    public convenience init(imageNamed: String, contentMode: UIViewContentMode? = nil) {
+    public convenience init(imageNamed: String, contentMode: UIView.ContentMode? = nil) {
         self.init(image: UIImage(named: imageNamed))
         if contentMode != nil {
             self.contentMode = contentMode!

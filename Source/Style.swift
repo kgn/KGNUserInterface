@@ -164,7 +164,7 @@ public struct Style {
          */
         public static func Shake(view: UIView, duration: TimeInterval = Duration, offset: CGFloat = Size.Padding, completionBlock: (() -> Void)? = nil) {
             let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
             animation.duration = duration
             animation.values = [
                 -offset, offset,

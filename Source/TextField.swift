@@ -76,7 +76,7 @@ open class TextField: PreferredFontTextField {
         }
     }
 
-    open override var textStyle: UIFontTextStyle {
+    open override var textStyle: UIFont.TextStyle {
         didSet {
             self.placeholderLabel.textStyle = self.textStyle
             self.autoCompleteLabel.textStyle = self.textStyle
@@ -150,7 +150,7 @@ open class TextField: PreferredFontTextField {
 
         NotificationCenter.default.addObserver(
             self, selector: .textDidChange,
-            name: .UITextFieldTextDidChange,
+            name: UITextField.textDidChangeNotification,
             object: self
         )
     }

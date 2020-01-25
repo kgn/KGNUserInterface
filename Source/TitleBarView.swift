@@ -68,7 +68,7 @@ open class TitleBarView: UIView {
 
     private lazy var titleLabel: Label = {
         let label = Label(textStyle: .subheadline)
-        label.accessibilityTraits = UIAccessibilityTraitHeader
+        label.accessibilityTraits = UIAccessibilityTraits.header
         return label
     }()
 
@@ -105,10 +105,10 @@ open class TitleBarView: UIView {
     open override var intrinsicContentSize: CGSize {
         if self.traitCollection.userInterfaceIdiom == .phone {
             if self.traitCollection.verticalSizeClass == .compact {
-                return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeightCompact)
+                return CGSize(width: UIView.noIntrinsicMetric, height: Style.Size.NavigationBarHeightCompact)
             }
         }
-        return CGSize(width: UIViewNoIntrinsicMetric, height: Style.Size.NavigationBarHeight)
+        return CGSize(width: UIView.noIntrinsicMetric, height: Style.Size.NavigationBarHeight)
     }
 
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

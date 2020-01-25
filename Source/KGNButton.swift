@@ -54,7 +54,7 @@ open class KGNButton: PreferredFontButton {
 
      - returns: The button object.
      */
-    open class func systemButton(withTitle title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
+    open class func systemButton(withTitle title: String, target: AnyObject?, action: Selector, forControlEvents events: UIControl.Event = .touchUpInside) -> Self {
         let button = self.init(type: .system)
         button.title = title
         button.addTarget(target, action: action, for: events)
@@ -72,7 +72,7 @@ open class KGNButton: PreferredFontButton {
 
      - returns: The button object.
      */
-    open class func systemButton(imageNamed name: String, target: AnyObject?, action: Selector, forControlEvents events: UIControlEvents = .touchUpInside) -> Self {
+    open class func systemButton(imageNamed name: String, target: AnyObject?, action: Selector, forControlEvents events: UIControl.Event = .touchUpInside) -> Self {
         let button = self.init(type: .system)
         button.image = UIImage(named: name)
         button.addTarget(target, action: action, for: events)

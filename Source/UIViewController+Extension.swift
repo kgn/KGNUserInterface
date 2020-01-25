@@ -21,7 +21,7 @@ extension UIViewController {
      - parameter belowSubview: Optional view to insert the given view controller's view below.
      */
     public func addSubViewController(_ viewController: UIViewController, toView: UIView? = nil, belowSubview: UIView? = nil) {
-        self.addChildViewController(viewController)
+        self.addChild(viewController)
         var parentView = self.view
         if let view = toView {
             parentView = view
@@ -31,7 +31,7 @@ extension UIViewController {
         } else {
             parentView?.addSubview(viewController.view)
         }
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
         viewController.view.pinToEdgesOfSuperview()
     }
 
